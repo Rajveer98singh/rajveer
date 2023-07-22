@@ -1379,6 +1379,36 @@ body.offcanvas {
   -o-transform: rotateZ(-45deg);
   transform: rotateZ(-45deg); }
 
+  .read-more-button-psi {
+    font-size: 12px; /* Adjust the font size to make the button smaller */
+    cursor: pointer;
+    color: blue; /* You can change the color to match your design */
+    margin-top: 0px;
+}
+.read-more-button-fareye {
+  font-size: 12px; /* Adjust the font size to make the button smaller */
+  cursor: pointer;
+  color: blue; /* You can change the color to match your design */
+  margin-top: 0px;
+}
+.read-more-button-nexmatics {
+  font-size: 12px; /* Adjust the font size to make the button smaller */
+  cursor: pointer;
+  color: blue; /* You can change the color to match your design */
+  margin-top: 0px;
+}
+.read-more-button-edc {
+  font-size: 12px; /* Adjust the font size to make the button smaller */
+  cursor: pointer;
+  color: blue; /* You can change the color to match your design */
+  margin-top: 0px;
+}
+.read-more-button-etex {
+  font-size: 12px; /* Adjust the font size to make the button smaller */
+  cursor: pointer;
+  color: blue; /* You can change the color to match your design */
+  margin-top: 0px;
+}
 .colorlib-nav-toggle {
   position: fixed;
   left: -5px;
