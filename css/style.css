@@ -11,6 +11,15 @@
 *	Edit this section
 *
 * ======================================================= */
+/* Define the CSS for the hover animation */
+.row.features-big .col-md-4 {
+  transition: transform 0.3s ease, /* Add transitions for transform and border-radius */
+}
+
+/* Apply the hover effect */
+.row.features-big .col-md-4:hover {
+  transform: scale(1.5); /* Increase the size to 2X */
+}
 body {
   font-family: "Quicksand", Arial, sans-serif;
   font-weight: 400;
