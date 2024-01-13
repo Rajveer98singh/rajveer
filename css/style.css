@@ -15,6 +15,71 @@
 .row.features-big .col-md-4 {
   transition: transform 0.3s ease, /* Add transitions for transform and border-radius */
 }
+.blog-container {
+    max-width: 800px; /* Adjust width as needed */
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.blog-buttons {
+    display: flex;
+    justify-content: center; /* This centers the buttons in the container */
+    gap: 10px; /* Adjust the space between buttons */
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Add styles for .btn-secondary and .btn-tertiary as needed */
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.author-avatar {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image round */
+    margin-right: 10px;
+}
+
+.author-text .author-name {
+    font-weight: bold;
+}
+
+.author-text .date {
+    color: #666;
+}
+
+/* Add hover effects for buttons */
+.btn:hover {
+    background-color: darken(#007bff, 10%);
+}
+
 
 /* Apply the hover effect */
 .row.features-big .col-md-4:hover {
