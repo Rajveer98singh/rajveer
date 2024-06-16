@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog Post: Button Design Tips</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-9KXQ2bPxIR4j3Y4iAPxu3lIpeaG40ncbO6X7q1nEZBgA03lMctwnfLAR2IKQ20Xr2Dd7+3q3lqKpvAXX89J53g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
   body {
     font-family: 'Arial', sans-serif;
@@ -20,6 +21,20 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
+  .fas-home {
+    color: grey; /* Set the font color to white */
+    text-decoration: none; /* Remove underline from link */
+    font-size: 1.2em; /* Adjust font size as needed */
+    padding: 5px 10px; /* Add some padding for better appearance */
+    margin-top: 5px;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    display: inline-block; /* Ensure the padding and background apply correctly */
+}
+
+/* Optional: Add a hover effect */
+.fas-home:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
   .blog-image {
     width: 100%;
     border-radius: 4px;
@@ -65,11 +80,14 @@ margin: 0;
 </head>
 <body>
     
+<div style="text-align: center;">
+  <a href="./index.html" class="fas-home">Home</a>
+</div>
 <a href="blogs/iitd-exp.html" class="clickable-container">
     <div class="container">
         <img src="images/iitd.jpeg" alt="Button Design Tips" class="blog-image">
         <h1 class="blog-title">My Experiences at IIT Delhi</h1>
-        <p class="blog-description">How to get most for life from your college.</p>
+        <p class="blog-description">How to get most for life from your college</p>
         <div class="author-section">
         <img src="main_pic.jpeg" alt="Author's Avatar" class="author-avatar">
         <div>
@@ -80,16 +98,16 @@ margin: 0;
     </div>
 </a>
 
-<a href="index1.html" class="clickable-container">
+<a href="blogs/jnvs.html" class="clickable-container">
     <div class="container">
-        <img src="edc.jpeg" alt="Button Design Tips" class="blog-image">
-        <h1 class="blog-title">Button design tips to avoid common mistakes</h1>
-        <p class="blog-description">Practical button design tips to avoid common usability and accessibility problems.</p>
+        <img src="images/jnv-lalitpur.jpg" alt="Button Design Tips" class="blog-image">
+        <h1 class="blog-title">Why Navodayas(JNV) are best</h1>
+        <p class="blog-description">how JNV's shines when India lacks in term of basic education and life</p>
         <div class="author-section">
         <img src="main_pic.jpeg" alt="Author's Avatar" class="author-avatar">
         <div>
             <p class="author-name">Rajveer</p>
-            <p class="publish-date">2 January 2024</p>
+            <p class="publish-date">17 June 2024</p>
         </div>
         </div>
     </div>

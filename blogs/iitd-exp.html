@@ -25,7 +25,7 @@ body {
 .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
 }
 
 header {
@@ -71,6 +71,21 @@ main {
     line-height: 1.8;
 }
 
+.back-to-blogs {
+    color: grey; /* Set the font color to white */
+    text-decoration: none; /* Remove underline from link */
+    font-size: 1.2em; /* Adjust font size as needed */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    
+    border-radius: 5px; /* Optional: Add rounded corners */
+    display: inline-block; /* Ensure the padding and background apply correctly */
+}
+
+/* Optional: Add a hover effect */
+.back-to-blogs:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
 footer {
     background-color: #333;
     color: #fff;
@@ -112,6 +127,7 @@ footer p {
 
 <header>
     <div class="container">
+        <a href="../blogs.html" class="back-to-blogs">Go Back to Blogs</a>
         <h1>Explore Tech and Life</h1>
         <p>Welcome to my blog where we explore the latest in technology and life!</p>
     </div>
@@ -139,9 +155,9 @@ footer p {
 
 </main>
 
-<footer>
+<footer style="padding:0px;">
     <div class="container">
-        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        <p>&copy; 2024 Rajveer. All rights reserved.</p>
     </div>
 </footer>
 
