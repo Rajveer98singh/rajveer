@@ -11,7 +11,22 @@
   gtag('config', 'UA-132792015-1');
 </script>
 <script>
-    function toggleExperiencePSI() {
+    function toggleExperienceBluSmart() {
+        var experienceParagraph = document.querySelector('.experience-paragraph-blusmart');
+        var fullExperienceParagraph = document.querySelector('.experience-list-blusmart');
+        var readMoreButton = document.querySelector('.read-more-button-blusmart');
+
+        if (fullExperienceParagraph.style.display === "none") {
+			experienceParagraph.style.display = "none";
+            fullExperienceParagraph.style.display = "block";
+            readMoreButton.textContent = "▲";
+        } else {
+			experienceParagraph.style.display = "block";
+            fullExperienceParagraph.style.display = "none";
+            readMoreButton.textContent = "▼";
+        }
+    }
+	function toggleExperiencePSI() {
         var experienceParagraph = document.querySelector('.experience-paragraph-psi');
         var fullExperienceParagraph = document.querySelector('.experience-list-psi');
         var readMoreButton = document.querySelector('.read-more-button-psi');
@@ -187,10 +202,10 @@
 				<a href="blogs.html">Blogs</a>
 			</div>
 			<div style="text-align: center;">
-				<a href="downloads/Rajveer_IIT_DELHI.pdf?raw=true" target="_blank">View CV</a>
+				<a href="downloads/Rajveer_IIT_DELHI.pdf" target="_blank">View CV</a>
 			</div>
 			<div style="text-align: center;">
-				<a href="https://drive.google.com/file/d/1JQnlvGtHApeOkF0WfeiROGrkp97_Z6Kh/view?usp=sharing" target="_blank">CV Drive Link</a>
+				<a href="https://drive.google.com/file/d/1HLfy9QYQd2nCmNFiXUt5LGjHutYbxKuT/view?usp=sharing" target="_blank">CV Drive Link</a>
 			</div>
             <br><br><br><br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br><br>
@@ -229,7 +244,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 								</div>
 								<div class="row features-big text-center wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
 									<div class="col-md-4 mb-5">
-										<div style="background-color: #2a3584; padding: 10%; margin-left: 7%; color: white; margin-top: 50px;" class="card card-body hoverable">
+										<div style="background-color: #2a3584; padding: 10%; margin-left: 7%; color: white; margin-top: 50px; border-radius: 5px;" class="card card-body hoverable">
 											<i class="fa fa-laptop white-text fa-3x mb-4" aria-hidden="true"></i>
 											
 											<h5 class="font-weight-bold white-text text-uppercase mb-4"  style="color: white; font-weight: bold;">Architect</h5>
@@ -238,7 +253,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										</div>
 									</div>
 									<div class="col-md-4 mb-5">
-										<div style="background-color: #004D40; padding: 10%; margin-left: 7%; color: white; margin-top: 50px;" class="card card-body hoverable">
+										<div style="background-color: #004D40; padding: 10%; margin-left: 7%; color: white; margin-top: 50px; border-radius: 5px;" class="card card-body hoverable">
 											<i class="fa fa-code white-text fa-3x mb-4" aria-hidden="true"></i>
 											<h5 class="font-weight-bold white-text text-uppercase mb-4" style="color: white; font-weight: bold;">Developer</h5>
 											<p class="white-text">I am involved in every facet of software development
@@ -246,7 +261,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										</div>
 									</div>
 									<div class="col-md-4 mb-5">
-										<div style="background-color: #263238;  padding: 10%; margin-left: 7%; color: white; margin-top: 50px;" class="card card-body hoverable">
+										<div style="background-color: #263238;  padding: 10%; margin-left: 7%; color: white; margin-top: 50px; border-radius: 5px;" class="card card-body hoverable">
 											<i class="fa fa-pencil white-text fa-3x mb-4" aria-hidden="true"></i>
 											<h5 class="font-weight-bold white-text text-uppercase mb-4"  style="color: white; font-weight: bold;">Designer</h5>
 											<p class="white-text">I love designing the products in such a way that can enhance the user's experience &amp; save their time.</p>
@@ -518,7 +533,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 					               <div class="timeline-label">
                                    <img src="iit-logo.png"  alt="" style="width:55px;height:55px; float:left; margin-top:-5px">
-					                  <h2><font size="3"><a href="https://home.iitd.ac.in/"> Institute of Technology, B.Tech Engineering Physics</a></font><br>
+					                  <h2><font size="3"><a href="https://home.iitd.ac.in/"> Institute of Technology,       B.Tech Engineering Physics</a></font><br>
                                        <span><font size="2">July. 2018 - June 2022</font></span></h2>
 					               </div>
 					            </div>
@@ -531,7 +546,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 					               <div class="timeline-label">
                                    <img src="arcadia-logo.jpeg"  alt="" style="width:55px;height:55px; float:left; margin-top:-5px">
-					                  <h2><font size="3"><a href="https://www.arcadiaacademy.ac.in/"> Academy Kota Rajasthan, Sr. Secondary School</a> </font><br>
+					                  <h2><font size="3"><a href="https://www.arcadiaacademy.ac.in/"> Academy Kota Rajasthan,      Sr. Secondary School</a> </font><br>
                                        <span><font size="2">July 2015 - March 2017</font></span></h2>
 					               </div>
 					            </div>
@@ -542,7 +557,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 					               <div class="timeline-label">
 					               <img src="jnv-logo.png"  alt="" style="width:55px;height:55px; float:left; margin-top:-5px">
-					               	<h2><font size="3"><a href="https://navodaya.gov.in/">Jawahar Navodaya Vidyalaya Lalitpur U.P. , High School</a></font> <br>
+					               	<h2><font size="3"><a href="https://navodaya.gov.in/">Jawahar Navodaya Vidyalaya Lalitpur U.P. ,       High School</a></font> <br>
                                      <span><font size="2">July 2010 - March 2015</font></span></h2>
 					               </div>
 					            </div>
@@ -570,9 +585,33 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 								<div class="timeline-entry-inner">
 									<div class="timeline-label">
+										<img src="blusmart.jpeg" alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
+										<h2><font size="3"><a href="https://www.linkedin.com/company/pan-science-innovation/"> BluSmart , Sr. Software Development Engineer(SDE II) </a></font><br>
+											<span><font size="2">(Gurgaon, India) Sept. 2024 - Present</font></span>
+										</h2>
+										
+										<p class="experience-paragraph-blusmart">Developed Intercity Cab Booking and Suggested Places features using geohash and ride hi. . .<button class="read-more-button-blusmart" onclick="toggleExperienceBluSmart()" >▼</button></p>
+										<p class="full-experience-paragraph-blusmart" style="display: none;">
+											<ul class="experience-list-blusmart" style="display: none;">
+												<li>Developed Intercity Cab Booking and Suggested Places features using geohash and ride history data, driving a 20% increase in user engagement across 5M+ users in India and the UAE.</li>
+												<li>Engineered scalable database solutions with MySQL and MongoDB, supporting millions of daily transactions while ensuring 99.9% uptime and fault tolerance in high-traffic, distributed systems.</li>
+												<li>Optimized backend architecture with Spring Boot and Redis, reducing API response times by 30% and enhancing real-time processing for high-demand features like ride-booking and insurance.</li>
+												<li>Designed and implemented multi-region infrastructure for seamless cross-country deployment across India and the UAE, ensuring data consistency, high availability, and failover strategies.</li>
+
+												<button class="read-more-button-blusmart" onclick="toggleExperienceBluSmart()" >▲</button>
+											</ul>
+										</p>
+										
+										
+									</div>
+								</div>
+							</article>
+							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+								<div class="timeline-entry-inner">
+									<div class="timeline-label">
 										<img src="parchaa.jpg" alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
-										<h2><font size="3"><a href="https://www.linkedin.com/company/pan-science-innovation/">Panscience AI Healthcare Pvt Ltd , Sr. Software Development Engineer </a></font><br>
-											<span><font size="2">(New Delhi, India) Jan. 2023 - Present</font></span>
+										<h2><font size="3"><a href="https://www.linkedin.com/company/pan-science-innovation/">Panscience AI Healthcare Pvt Ltd , Founding Engineer </a></font><br>
+											<span><font size="2">(New Delhi, India) Jan. 2023 - May 2024</font></span>
 										</h2>
 										
 										
