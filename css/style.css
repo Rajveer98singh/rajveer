@@ -1531,3 +1531,12 @@ body.offcanvas {
 
 .js .animate-box {
   opacity: 0; }
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(0.75);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
