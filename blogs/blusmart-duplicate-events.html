@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey to IIT Delhi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+TAS:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles for body and typography */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.blog-post {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #c6bfbf;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.post-content {
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.post-content h3 {
+    margin-top: 25px;
+    font-size: 1.5em;
+    color: #444;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.back-to-blogs {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.back-to-blogs:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 0.8em;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .post-title {
+        font-size: 1.5em;
+    }
+
+    .post-content {
+        font-size: 1em;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="../blogs.html" class="back-to-blogs">Go Back to Blogs</a>
+            <h1>Explore Tech and Life</h1>
+            <p>Welcome to my blog where we explore the latest in technology and life!</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <article class="blog-post">
+            <header>
+                <h2 class="post-title">How We Tackled Network-Induced Duplicate Events problem</h2>
+                <p class="post-meta">Posted on <time datetime="2025-02-08">Feb 08, 2025</time></p>
+            </header>
+    
+            <div class="post-content">
+                <br>
+                <p>Hi everyone,</p>
+                <p>Today, I want to share a tech incident that occurred at my company, Blusmart Mobility. While it was a fairly simple issue, it was one that couldn’t have been avoided. As you may know, I work as a senior backend developer at Blusmart Mobility, where we have a feature that allows users to book rides and create recurring ride schedules for specific weekly times.</p>
+    
+                <h3>The Incident:</h3>
+                <p>The issue we faced was that multiple ride creation events were happening for some users. To handle the scheduling of these ride creation events, we use Quartz Scheduler in the backend. Quartz is a powerful job scheduling library that helps execute background tasks like event handling.</p>
+                <p>At first, we suspected the issue was caused by multiple threads in Quartz executing the same event simultaneously. However, after looking into it, we found that this wasn’t the case. Quartz itself was functioning correctly, managing the state of the events (whether they were "Waiting," "Acquired," "Fired," "Paused," or "Completed").</p>
+                <p>After diving deeper into the problem, we realized the real cause: the issue wasn’t Quartz or how it was executing the jobs. The problem was that when we scheduled a job, it would trigger and be deleted within milliseconds. Then, another job would get scheduled, causing multiple jobs to trigger at nearly the same time. This happened because we were receiving multiple requests from the frontend in a very short time frame.</p>
+    
+                <h3>Root Cause:</h3>
+                <p>The reason we were receiving multiple requests was due to network issues. If the user's network was weak, the app would hold onto requests until the network became reachable again. During this time, if the user clicked the button multiple times, the app would "hold" the requests and send them all at once once the network was back up, often within 300-400 milliseconds. This caused our backend to receive multiple requests, and as a result, we created multiple events for the same action.</p>
+                <p>We had not accounted for handling concurrent executions of the same event coming from multiple requests in such a short time span. This was the main issue.</p>
+
+                <!-- Insert Image Here -->
+                <img src="../images/response-latency-diagram.jpg" alt="External Latency of request" class="image-class" />
+
+
+                <h3>Our Solutions:</h3>
+                <br>
+                <p>We considered several potential solutions:</p>
+                <br>
+                <ul>
+                    <li><strong>Block Multiple Requests from Frontend within a Short Timeframe:</strong> This solution would involve preventing users from sending multiple requests in a short time. The advantage is that it would stop the problem at the frontend. However, it would require a new release of the frontend, and users with older app versions would still face the same issue. This wasn’t ideal, so we looked for an alternative.</li>
+                    <br>
+                    <li><strong>Apply Locks on Resources During Event Execution:</strong> We thought about applying locks to the resources when executing the event. This would ensure that only one job runs at a time. However, this solution posed challenges because the events were scheduled from different services, and we couldn’t apply this solution universally across all services without testing and understanding its full impact. It would also introduce code duplication across multiple APIs where this issue could arise. Not ideal for scalability.</li>
+                    <br>
+                    <li><strong>Implement an Interceptor to Restrict Multiple Requests:</strong> After considering the above options, we decided to implement an interceptor that would limit the number of requests allowed for the same action within a specific time window. This solution is more flexible and can be easily extended to other APIs. We decided to set the time window to 500ms, based on our P95 latency (the 95th percentile of response time). This means if multiple requests hit the backend within a 500ms window, only the first request would be allowed to proceed, and the others would be rejected.</li>
+                </ul>
+
+                <br>
+    
+                <h4>Why 500ms?</h4>
+                <p>We chose the 95th percentile because it covers most use cases—solving 95% of our issues. It won’t catch every edge case, but it greatly reduces the problem.</p>
+    
+                <h3>Code for the Interceptor:</h3>
+                <pre><code>
+    @Component
+    @Slf4j
+    public class RequestThrottleInterceptor extends HandlerInterceptorAdapter {
+    
+        @Autowired
+        private RedisTemplate<String, Long> redisTemplate;
+
+        private static final String THROTTLE_KEY_PREFIX = "request_throttle:";
+        private static final long THROTTLE_TIME_MS = 500L;  // 500 ms
+
+        @Override
+        public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) 
+        throws Exception {
+           String requestUri = request.getRequestURI();
+    
+           // Identify the user (could be IP, session ID, etc.)
+           Integer userSSOId = getUserIdentifier(request);
+           if (userSSOId == null) return true;
+    
+           long currentTime = DateTime.now().getMillis();
+    
+           // Generate dynamic Redis key based on the request URI
+           String redisKey = THROTTLE_KEY_PREFIX + convertUriToKey(requestUri) + ":ssoId:" + userSSOId;
+           Long lastRequestTime = redisTemplate.opsForValue().get(redisKey);
+    
+           if (lastRequestTime != null && (currentTime - lastRequestTime) < THROTTLE_TIME_MS) {
+               log.info("Too many requests for URI: {}, redisKey : {}", requestUri,redisKey);
+               response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+               PrintWriter out = response.getWriter();
+               out.print(
+                gson.toJson(
+                    new ResponseDto<>(
+                        StringConstants.FAILURE, 
+                        HttpStatus.TOO_MANY_REQUESTS.value(), 
+                        HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase(),
+                        null)));
+               out.flush();
+               return false;
+           }
+           // Use setEx to store and set expiration at once
+           redisTemplate.opsForValue().set(redisKey, currentTime, THROTTLE_TIME_MS / 1000, TimeUnit.SECONDS);
+           return true;
+        }
+    
+        private Integer getUserIdentifier(HttpServletRequest request) {
+           return RequestContext.getSsoId();
+        }
+    
+        // Helper method to convert URI to key format 
+        // (e.g., /api/v1/recurring/ride/actions -> api_v1_recurring_ride_actions)
+        private String convertUriToKey(String uri) {
+            return uri.replaceAll("^/|/+", "_").substring(1);
+        }
+    }
+                </code></pre>
+    
+                <h3>How It Works:</h3>
+                <p>Redis is used to store the time of the last request for each user and endpoint. The key is a combination of the request URI and the user’s unique identifier (e.g., ssoId).</p>
+                <p>The interceptor checks if the user has already sent a request for the same endpoint within the defined 500ms window. If a request comes in within this window, it will be blocked. If it’s the first request, it is allowed, and the time is updated in Redis.</p>
+                <p>This solution ensures that the user can only send one request within the time window, preventing the creation of multiple ride events from concurrent requests.</p>
+    
+                <h3>Conclusion:</h3>
+                <p>We successfully solved the issue by implementing an interceptor with Redis-based throttling, which allows us to handle multiple requests in a short time frame efficiently. This solution is also extendable to other APIs that may encounter similar concurrency issues. We could still optimize this solution in the future to make it more flexible based on specific requirements. But for now, it has significantly reduced the problem and improved the user experience.</p>
+                <br>
+                <p>If you have any questions or suggestions, feel free to reach out to me for further discussions!</p>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Blusmart Mobility. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    </body>
+    </html>
+    
