@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security DDOS Attack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+TAS:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles for body and typography */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.blog-post {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #c6bfbf;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.post-content {
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.post-content h3 {
+    margin-top: 25px;
+    font-size: 1.5em;
+    color: #444;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.back-to-blogs {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #333;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.back-to-blogs:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 0.8em;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .post-title {
+        font-size: 1.5em;
+    }
+
+    .post-content {
+        font-size: 1em;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="../blogs.html" class="back-to-blogs">Go Back to Blogs</a>
+            <h1>Explore Tech and Life</h1>
+            <p style="font-size: 0.7em">Welcome to my blog where we explore the latest in technology and life!</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <article class="blog-post">
+            <header>
+                <h2 class="post-title">How to Secure Open Endpoints and Protect Against DDoS Attacks Without Affecting Genuine Users</h2>
+                <p class="post-meta">Posted on <time datetime="2025-02-15">Feb 15, 2025</time></p>
+            </header>
+    
+            <div class="post-content">
+                <br>
+                <p>Hi everyone,</p>
+                <p>In today’s tech world, open endpoints are a common security challenge for many applications. These are endpoints in an app that don’t have sufficient security measures, such as authentication. For example, the login API is typically open—without any authentication needed to access it—making it a prime target for attackers. In this blog, we’ll discuss how attackers exploit these open endpoints, especially DDoS (Distributed Denial of Service) attacks, and how we can secure them without affecting genuine users. We’ll also dive into ways of preventing these attacks, ensuring your system remains safe and responsive.</p>
+    
+                <h3>Understanding Open Endpoints and DDoS Attacks</h3>
+                <p>Open endpoints are APIs that don't require authentication, which makes them vulnerable to various types of attacks. Attackers often target these endpoints first to gain access to your system and exploit it further.</p>
+                <p>One of the most common attacks on open endpoints is DDoS. In a DDoS attack, the attacker sends a massive amount of requests to the server—up to 1000 requests per second or more. This flood of requests can overwhelm the system and slow it down or even crash it. For instance, imagine an attacker repeatedly calling a login API.</p>
+    
+                <br>
+
+                <h4>Example Scenario:</h4>
+                <p>Let’s assume the attacker has access to a /login endpoint. They start sending 500,000 requests per minute to your server. Each request tries to send an OTP to randomly generated emails. If the system doesn’t prevent this, it will attempt to send OTPs to 500,000 emails—even if they aren’t real users. This would not only overload the server but also incur significant costs for the company (since sending those OTPs may cost money).</p>
+    
+                <!-- Insert Image Here -->
+                <img src="../images/DDoS-attack.png" alt="DDOS-attack" class="image-class" style="width: 100%; height: 100%;" />
+
+
+                <h3>How to Secure Open Endpoints</h3>
+                <br>
+                <p>We can secure open endpoints and protect against DDoS attacks through several strategies.</p>
+    
+                <h4>3.1 Throttling Requests</h4>
+                <br>
+                <p>To prevent overwhelming your system with excessive requests, you can apply throttling to the endpoint. Throttling limits the number of requests a user can make in a given time period.</p>
+                <p>For example, let’s assume that the /login endpoint normally gets about 10,000 requests per minute on average, with peak traffic reaching 25,000 requests per minute. To be on the safe side, you can set the throttling limit to 45,000 requests per minute. This way, even if an attacker tries to send 500,000 requests per minute, only 45,000 requests will be processed, and the rest will be blocked.</p>
+    
+                <br>
+                <h4>3.2 Key Hashing for Request Integrity</h4>
+                <br>
+                <p>While throttling can help with DDoS attacks, it’s not enough if attackers are able to spoof or alter requests. To prevent attackers from tampering with requests, you can use hashing to validate the integrity of each request.</p>
+                <p>Here’s how it works:</p>
+                <p>Every request sent from the client (e.g., the login request) includes a hash generated using the request body and a constant string. The server also generates the same hash using the same data and checks if the hashes match. If an attacker tries to alter the request or its body, the hash won’t match, and the server will reject the request as unauthorized.</p>
+                <p>We’ll talk more about how to implement this and keep it secure in the next section.</p>
+    
+                <h3>Adding Extra Security with Dynamic Hashing</h3>
+                <br>
+                <h4>4.1 Dynamic Key Updates</h4>
+                <p>You can store the hash key (or secret string) on a real-time platform like Firebase, so it can be updated frequently. Every time the key is updated, the application and server will sync the new key through Firebase. The app fetches the new key from Firebase and generates the new hash for every request. The server also fetches the updated key from Firebase and uses it to verify incoming requests. If an attacker tries to use the old key after a key update, the hash won’t match, and their requests will be rejected.</p>
+    
+                <br>
+                <h4>4.2 Key Update and Throttling Reset</h4>
+                <br>
+                <p>Now, let’s say an attacker manages to send a huge number of requests, but the server is throttling the requests to avoid overload. When the server updates the key to prevent the attack, it’s essential to ensure that genuine users don’t get affected by the throttling.</p>
+                <p>Here’s a solution: When the key is updated in Firebase, we can also reset the throttling counter. This allows genuine users to continue accessing the service without delays while preventing the attack from continuing.</p>
+    
+                <br>
+                <h4>4.3 Intelligent Architecture for Attack Prevention</h4>
+                <br>
+                <p>In this system, we use two interceptors:</p>
+                <ol>
+                    <li><strong>Hash Matching Interceptor:</strong> This checks if the incoming request’s hash matches the expected hash. If it doesn’t, the request is rejected.</li>
+                    <li><strong>Throttling Interceptor:</strong> This limits the number of requests allowed per minute.</li>
+                </ol>
+    
+                <br>
+                <p>Here’s how the system works in normal conditions:</p>
+                <p>The request is first checked by the Hash Matching Interceptor. If the hash matches, it passes through the Throttling Interceptor for rate limiting.</p>
+
+                <br>
+                <p> But during a DDoS attack:</p>
+                
+                <p>The Hash Matching Interceptor will still let requests through if the hash is valid.</p>
+                <p>The Throttling Interceptor will limit requests once the threshold is reached, allowing only up to 45,000 requests per minute.</p>
+                <p>If the attack continues and the throttling limit is hit, we trigger a key update and reset the throttling counter. This ensures that the attacker’s requests, using an outdated key, will be rejected by the hash matcher, while genuine users can continue to access the service without being throttled.</p>
+
+    
+                <h3>Secure Communication with Firebase</h3>
+                <p>To further protect the dynamic key and prevent attackers from gaining access to it, we can secure the communication between the app and Firebase using the Firebase SDK. This SDK ensures that the data is encrypted and difficult to intercept.</p>
+    
+                <h3>Conclusion</h3>
+                <p>Securing open endpoints from attacks like DDoS while still serving genuine users is a challenging task, but with the right combination of throttling, hashing, and dynamic key management, we can effectively prevent unauthorized access and protect our applications. By introducing two layers of security—hash matching and throttling—along with intelligent design choices like dynamic key updates and throttling reset, we can ensure that the system stays resilient even during a high-scale attack, while still delivering a seamless experience to legitimate users.</p>
+                <p>We hope this guide helps you secure your endpoints and protect your application from DDoS and other malicious attacks. Stay safe and happy coding!</p>
+    
+                <h3>Further Reading / Resources</h3>
+                <ul>
+                    <li>How to Implement Throttling in Web Applications</li>
+                    <li>Understanding DDoS Attacks and Prevention Techniques</li>
+                    <li>Best Practices for API Security and Authentication</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+    
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rajveer. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    </body>
+    </html>
+    
