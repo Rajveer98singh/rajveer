@@ -35,17 +35,27 @@
 .fas-home:hover {
     background-color: #0056b3; /* Change background color on hover */
 }
-  .blog-image {
-    width: 100%;
-    border-radius: 4px;
-    height: 400px;
-margin-bottom: 20px;
+.blog-image {
+  width: 100%;
+  border-radius: 4px;
+  height: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 .blog-title {
 font-size: 24px;
 color: #333;
 margin-bottom: 10px;
 }
+
+.blog-title, .blog-description, .author-section {
+    cursor: pointer; /* Make sure the content area is clickable */
+}
+
+.blog-image:hover, .blog-content:hover {
+    opacity: 0.8; /* Optional: Adds a hover effect */
+}
+
 .blog-description {
 font-size: 16px;
 color: #666;
@@ -83,6 +93,21 @@ margin: 0;
 <div style="text-align: center;">
   <a href="./index.html" class="fas-home">Home</a>
 </div>
+
+<a href="blogs/database-indexing.html" class="clickable-container">
+  <div class="container">
+      <img src="images/Indexing.png" alt="Into to indexing" class="blog-image">
+      <h1 class="blog-title">How to does actually indexing work and data is stored in database</h1>
+      <p class="blog-description">An Introduction to Indexing</p>
+      <div class="author-section">
+      <img src="main_pic.jpeg" alt="Author's Avatar" class="author-avatar">
+      <div>
+          <p class="author-name">Rajveer</p>
+          <p class="publish-date">01 Mar 2025</p>
+      </div>
+      </div>
+  </div>
+</a>
 
 <a href="blogs/security-ddos-attack.html" class="clickable-container">
   <div class="container">
@@ -129,7 +154,7 @@ margin: 0;
     </div>
 </a>
 
-<a href="blogs/jnvs.html" class="clickable-container">
+<!-- <a href="blogs/jnvs.html" class="clickable-container">
     <div class="container">
         <img src="images/jnv-lalitpur.jpg" alt="jnv Lalitpur" class="blog-image">
         <h1 class="blog-title">Why Navodayas(JNV) are best</h1>
@@ -142,6 +167,6 @@ margin: 0;
         </div>
         </div>
     </div>
-</a>
+</a> -->
         
 </body
