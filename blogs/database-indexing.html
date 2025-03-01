@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indexing - An Introduction </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+TAS:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles for body and typography */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.blog-post {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #c6bfbf;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.post-content {
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.post-content h3 {
+    margin-top: 25px;
+    font-size: 1.5em;
+    color: #444;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.back-to-blogs {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #333;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.back-to-blogs:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 0.8em;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .post-title {
+        font-size: 1.5em;
+    }
+
+    .post-content {
+        font-size: 1em;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="../blogs.html" class="back-to-blogs">Go Back to Blogs</a>
+            <h1>Explore Tech and Life</h1>
+            <p style="font-size: 0.7em">Welcome to my blog where we explore the latest in technology and life!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="blog-post">
+            <header>
+                <h2 class="post-title">All Basics of Databases Indexing</h2>
+                <p class="post-meta">Posted on <time datetime="2025-03-01">March 1, 2025</time></p>
+            </header>
+    
+            <div class="post-content" >
+                <br>
+                <p>Indexing is a technique used to improve the speed of data retrieval in databases. Without indexing, searching for data can be slow, requiring you to go through every row. In this blog, we will cover:</p>
+                <br>
+                <ul>
+                    <li>How data is stored in a database</li>
+                    <li>The different types of indexing</li>
+                    <li>The data structures used in indexing</li>
+                </ul>
+                <p>Let’s dive into each of these topics.</p>
+    
+                <h3>1. How Data is Stored in a Database</h3>
+                <p>In a database, data is stored in tables that have rows and columns. However, these tables are just a logical representation. The actual data is stored in data pages. A data page typically has a size of 8KB, but this can vary across different databases.</p>
+                <br>
+                <p><strong>Header:</strong> The first 96 bytes of a page store important information like the page number, free space, and checksum.</p>
+                <p><strong>Body:</strong> The remaining 8060 bytes store the actual data rows. For example, if each row is 64 bytes, approximately 125 rows can fit into the body of a data page.</p>
+                <p><strong>Offset:</strong> This is an array that stores pointers to the rows in the body of the page.</p>
+                <p>These data pages are then stored on data blocks in physical memory (disk). A data block is the smallest unit of data that can be read or written in a single I/O operation. The database management system (DBMS) does not manage the data block; it only maps data pages to data blocks.</p>
+
+                <!-- Insert Image Here -->
+                <div style="text-align: center;">
+                    <img src="../images/data-page.jpg" alt="Data Page" class="image-class" style="width: 40%; height: 40%;" />
+                    <img src="../images/data-block.jpg" alt="Data Block" class="image-class" style="width: 40%; height: 40%;" />
+                </div>
+    
+                <h3>2. Types of Indexing in RDBMS</h3>
+                <p>There are two main types of indexing in relational databases:</p>
+                <ul>
+                    <li>Clustered Indexing</li>
+                    <li>Non-Clustered Indexing</li>
+                </ul>
+                <p><strong>What is Indexing?</strong> Indexing is used to improve the performance of queries by allowing faster data retrieval. Without an index, searching for a row in a table takes O(n) time. With an index, the time is reduced to O(log n) using a B+ tree data structure. The B+ tree helps in faster search, insertion, and deletion operations.</p>
+    
+                <h3>3. Data Structures Used in Indexing: B-tree and B+ Tree</h3>
+                <h4>B-Tree</h4>
+                <p>A B-tree is a self-balancing tree data structure that maintains sorted data. It allows search, insertion, and deletion in logarithmic time. Each node in a B-tree can have multiple children, and all leaf nodes are at the same level.</p>
+                <p><a href="https://www.geeksforgeeks.org/introduction-of-b-tree-2/" target="_blank" >You can learn more about B-trees here.</a></p>
+    
+                <h4>B+ Tree</h4>
+                <p>A B+ tree is similar to a B-tree but with an additional feature: all child nodes are linked. This feature makes it particularly useful for database indexing. When there are many rows, B+ trees help the DBMS manage large data pages efficiently. In a B+ tree, the leaf nodes store all values, including indexed values, and these leaf nodes are linked to each other for efficient sequential access. Internal nodes only store pointers to their child nodes.</p>
+                <!-- Insert Image Here -->
+                <div style="text-align: center;">
+                    <img src="../images/B+-tree.jpg" alt="B+ tree" class="image-class" style="width: 60%; height: 60%;" />
+                </div>
+                <p>For example, in an employee table where employee IDs are indexed, the B+ tree stores the IDs in the leaf nodes.</p>
+    
+                <h3>4. How Data Pages are Created and Linked</h3>
+                <p>DBMS maintains mappings between data pages and data blocks. After creating an index, data is stored in a sorted order. Each node in the B-tree holds a pointer to the data page number.</p>
+                <p>When a new row is inserted, the B-tree determines the best position for the row and finds the appropriate data page. If there’s space, the row is inserted. If the page is full, the DBMS performs page splitting, which rearranges data into multiple pages.</p>
+    
+                <h3>5. Types of Indexing</h3>
+                <br>
+                <h4>Clustered Indexing</h4>
+                <p>In clustered indexing, the order of rows in the data pages matches the order of the index.</p>
+                <p>A table can only have one clustered index.</p>
+                <p>If no index is specified, the DBMS automatically creates a primary key as the clustered index.</p>
+                <p>For example, if you create an index on an employee ID in a table, the rows in the data page are sorted by this index.</p>
+    
+                <h4>Non-Clustered Indexing</h4>
+                <p>Non-clustered indexing requires creating a separate B+ tree for each secondary index.</p>
+                <p>It stores index pages in data blocks, which results in additional overhead.</p>
+                <p>Finding data involves first searching the index, then using the pointer to access the data page.</p>
+                <p>Although non-clustered indexing requires more space and is slower due to additional steps, it is useful for searching specific columns.</p>
+    
+                <h3>6. Clustered vs Non-Clustered Index Performance</h3>
+                <h4>Clustered Index</h4>
+                <p>Generally faster for range-based searches since the rows are stored in the same order as the index.</p>
+    
+                <h4>Non-Clustered Index</h4>
+                <p>Faster for lookups on specific columns but doesn't rearrange the data. It may be slower due to the need for extra searches and lookups.</p>
+
+                <!-- Insert Image Here -->
+                <div style="text-align: center;">
+                    <img src="../images/clustered-vs-non-indexing.jpg" alt="clustered vs non clustered performance" class="image-class" style="width: 60%; height: 60%;" />
+                </div>
+    
+                <h3>Conclusion</h3>
+                <p>In summary, indexing is a powerful tool that helps improve database query performance. Clustered and non-clustered indexes each have their benefits depending on the type of queries you run. Understanding how data is stored and how indexing works is crucial for optimizing the performance of a database system.</p>
+            </div>
+        </article>
+    </main>
+    
+    
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rajveer. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    </body>
+    </html>
+    
