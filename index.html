@@ -11,6 +11,21 @@
   gtag('config', 'UA-132792015-1');
 </script>
 <script>
+    function toggleExperienceKeychain() {
+        var experienceParagraph = document.querySelector('.experience-paragraph-keychain');
+        var fullExperienceParagraph = document.querySelector('.experience-list-keychain');
+        var readMoreButton = document.querySelector('.read-more-button-keychain');
+
+        if (fullExperienceParagraph.style.display === "none") {
+			experienceParagraph.style.display = "none";
+            fullExperienceParagraph.style.display = "block";
+            readMoreButton.textContent = "▲";
+        } else {
+			experienceParagraph.style.display = "block";
+            fullExperienceParagraph.style.display = "none";
+            readMoreButton.textContent = "▼";
+        }
+    }
     function toggleExperienceBluSmart() {
         var experienceParagraph = document.querySelector('.experience-paragraph-blusmart');
         var fullExperienceParagraph = document.querySelector('.experience-list-blusmart');
@@ -165,10 +180,12 @@
 				<div class="author-img" style="background-image: url(main_pic.jpeg);"></div>
 				<h1 id="colorlib-logo"><a href="index.html">Rajveer Singh</a></h1>
 				<span class="position"> Indian Institute of Technology Delhi <br />
-				
+
+					<br />
+					Keychain
+					<br />
 					<br />
 					BluSmart
-					<br />
 					<br />
 					Panscience AI Healthcare
 					<br />
@@ -590,9 +607,33 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 								<div class="timeline-entry-inner">
 									<div class="timeline-label">
+										<img src="keychain.jpeg" alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
+										<h2><font size="3"><a href="https://www.keychain.com/"> Keychain , Senior Backend Developer (SDE II) </a></font><br>
+											<span><font size="2">(Gurgaon, India) May 2025 - Present</font></span>
+										</h2>
+
+										<p class="experience-paragraph-keychain">Designed and implemented contract management microservice using Spring Boot and PostgreSQL to en. . .<button class="read-more-button-keychain" onclick="toggleExperienceKeychain()" >▼</button></p>
+										<p class="full-experience-paragraph-keychain" style="display: none;">
+											<ul class="experience-list-keychain" style="display: none;">
+												<li>Designed and implemented contract management microservice using Spring Boot and PostgreSQL to enforce manufacturer messaging limits, supporting multiple contracts with configurable amendments and fallback rules, improving platform compliance by 100% and reducing unauthorized outreach by 75%</li>
+												<li>Architected high-performance caching strategy leveraging Redis (4-hour TTL) and PostgreSQL materialized views for category metrics, achieving 85% reduction in query latency and 60% improvement in brand-manufacturer matching accuracy through real-time segment analysis</li>
+												<li>Developed geospatial recommendation system for packaging suppliers using quadtree optimization, increasing manufacturer retention by 40% and reducing supplier discovery time from days to minutes across 10,000+ facilities</li>
+												<li>Led A/B testing framework for intro batching system using EventBridge Scheduler and cohort analysis, achieving 65% improvement in brand engagement rates and 3-4% increase in project conversion through optimized messaging strategies</li>
+												<li>Spearheaded SOC2 compliance infrastructure migration using Terraform for multi-environment deployments, implementing comprehensive audit logging and IAM policies that reduced security incidents by 80% while accelerating CI/CD cycles by 30%</li>
+												<button class="read-more-button-keychain" onclick="toggleExperienceKeychain()" >▲</button>
+											</ul>
+										</p>
+
+
+									</div>
+								</div>
+							</article>
+							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+								<div class="timeline-entry-inner">
+									<div class="timeline-label">
 										<img src="blusmart.jpeg" alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
 										<h2><font size="3"><a href="https://www.linkedin.com/company/pan-science-innovation/"> BluSmart , Sr. Software Development Engineer(SDE II) </a></font><br>
-											<span><font size="2">(Gurgaon, India) Sept. 2024 - Present</font></span>
+											<span><font size="2">(Gurgaon, India) Sept. 2024 - May 2025</font></span>
 										</h2>
 										
 										<p class="experience-paragraph-blusmart">Developed Intercity Cab Booking and Suggested Places features using geohash and ride hi. . .<button class="read-more-button-blusmart" onclick="toggleExperienceBluSmart()" >▼</button></p>
