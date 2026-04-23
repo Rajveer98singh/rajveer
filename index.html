@@ -1,1021 +1,428 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rajveer Singh | Senior Backend Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajveer Singh</title>
+<meta name="description" content="Rajveer Singh — Senior Backend Engineer | IIT Delhi">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Senior Backend Engineer with 4+ years architecting scalable microservices and event-driven platforms. Java/Spring Boot, PostgreSQL, Redis, AWS specialist. IIT Delhi graduate.">
-    <meta name="keywords" content="Rajveer Singh, Senior Backend Engineer, Java, Spring Boot, AWS, PostgreSQL, IIT Delhi, Software Engineer, Microservices">
-    <meta name="author" content="Rajveer Singh">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://rajveer98singh.github.io/rajveer/">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rajveer98singh.github.io/rajveer/">
-    <meta property="og:title" content="Rajveer Singh | Senior Backend Engineer">
-    <meta property="og:description" content="Senior Backend Engineer with 4+ years architecting scalable microservices. Java/Spring Boot, PostgreSQL, Redis, AWS. IIT Delhi B.Tech.">
-    <meta property="og:image" content="https://rajveer98singh.github.io/rajveer/main_pic.jpeg">
-    <meta property="og:site_name" content="Rajveer Singh Portfolio">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://rajveer98singh.github.io/rajveer/">
-    <meta name="twitter:title" content="Rajveer Singh | Senior Backend Engineer">
-    <meta name="twitter:description" content="Senior Backend Engineer with 4+ years architecting scalable microservices. Java/Spring Boot, PostgreSQL, Redis, AWS. IIT Delhi B.Tech.">
-    <meta name="twitter:image" content="https://rajveer98singh.github.io/rajveer/main_pic.jpeg">
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Rajveer Singh",
-        "url": "https://rajveer98singh.github.io/rajveer/",
-        "image": "https://rajveer98singh.github.io/rajveer/main_pic.jpeg",
-        "jobTitle": "Senior Backend Engineer",
-        "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "Indian Institute of Technology Delhi"
-        },
-        "sameAs": [
-            "https://github.com/rajveer98singh",
-            "https://www.linkedin.com/in/rajveer-singh-iitd/",
-            "https://leetcode.com/razz007/"
-        ]
+    body {
+        background: #0a0e1a;
+        color: #e2e8f0;
+        font-family: 'Inter', sans-serif;
+        overflow: hidden;
+        height: 100vh;
+        cursor: default;
     }
-    </script>
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    /* Particle canvas */
+    #particles {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+    }
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    /* Main content */
+    .hero {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        padding: 2rem;
+    }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    /* Terminal window */
+    .terminal {
+        background: rgba(15, 23, 42, 0.85);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 12px;
+        padding: 0;
+        max-width: 720px;
+        width: 100%;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 80px rgba(59, 130, 246, 0.08), 0 20px 60px rgba(0,0,0,0.4);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 0.8s ease 0.3s forwards;
+    }
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132792015-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-132792015-1');
-    </script>
+    .terminal-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 16px;
+        background: rgba(30, 41, 59, 0.6);
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+    }
+    .terminal-dot {
+        width: 10px; height: 10px; border-radius: 50%;
+    }
+    .terminal-dot.red { background: #ef4444; }
+    .terminal-dot.yellow { background: #eab308; }
+    .terminal-dot.green { background: #22c55e; }
+    .terminal-title {
+        flex: 1; text-align: center; font-size: 11px; color: #64748b;
+        font-family: 'JetBrains Mono', monospace;
+    }
 
-    <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 3px; }
+    .terminal-body {
+        padding: 28px 28px 32px;
+        text-align: left;
+    }
 
-        /* Smooth transitions for dark mode */
-        * { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+    /* Code lines */
+    .code-line {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: clamp(11px, 1.4vw, 13px);
+        line-height: 1.8;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+    .code-line .prompt { color: #22c55e; }
+    .code-line .keyword { color: #c084fc; }
+    .code-line .string { color: #fbbf24; }
+    .code-line .type { color: #60a5fa; }
+    .code-line .comment { color: #475569; font-style: italic; }
+    .code-line .method { color: #34d399; }
+    .code-line .number { color: #f97316; }
+    .code-line .bracket { color: #94a3b8; }
+    .code-line .operator { color: #f472b6; }
 
-        /* Animate on scroll — multiple variants */
-        .fade-up, .fade-left, .fade-right, .fade-scale {
-            opacity: 0;
-            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .fade-up { transform: translateY(40px); }
-        .fade-left { transform: translateX(-40px); }
-        .fade-right { transform: translateX(40px); }
-        .fade-scale { transform: scale(0.92); }
-        .fade-up.visible, .fade-left.visible, .fade-right.visible, .fade-scale.visible {
-            opacity: 1;
-            transform: none;
-        }
+    /* Line-by-line fade in animation */
+    .code-line {
+        opacity: 0;
+        transform: translateX(-8px);
+        animation: lineIn 0.4s ease forwards;
+    }
+    .code-line:nth-child(1) { animation-delay: 1.0s; }
+    .code-line:nth-child(2) { animation-delay: 1.5s; }
+    .code-line:nth-child(3) { animation-delay: 2.0s; }
+    .code-line:nth-child(4) { animation-delay: 2.5s; }
+    .code-line:nth-child(5) { animation-delay: 3.0s; }
+    .code-line:nth-child(6) { animation-delay: 3.5s; }
+    .code-line:nth-child(7) { animation-delay: 4.0s; }
+    .code-line:nth-child(8) { animation-delay: 4.5s; }
+    .code-line:nth-child(9) { animation-delay: 5.0s; }
 
-        /* Stagger children animation */
-        .stagger-children > * {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .stagger-children.visible > * { opacity: 1; transform: none; }
-        .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; }
-        .stagger-children.visible > *:nth-child(2) { transition-delay: 80ms; }
-        .stagger-children.visible > *:nth-child(3) { transition-delay: 160ms; }
-        .stagger-children.visible > *:nth-child(4) { transition-delay: 240ms; }
-        .stagger-children.visible > *:nth-child(5) { transition-delay: 320ms; }
-        .stagger-children.visible > *:nth-child(6) { transition-delay: 400ms; }
-        .stagger-children.visible > *:nth-child(7) { transition-delay: 480ms; }
-        .stagger-children.visible > *:nth-child(8) { transition-delay: 560ms; }
-        .stagger-children.visible > *:nth-child(9) { transition-delay: 640ms; }
-        .stagger-children.visible > *:nth-child(10) { transition-delay: 720ms; }
+    @keyframes lineIn {
+        from { opacity: 0; transform: translateX(-8px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
 
-        /* Typing cursor for heading */
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s step-end infinite;
-            color: #3b82f6;
-            font-weight: 300;
-        }
+    /* Cursor blink on last line */
+    .code-line:last-child::after {
+        content: '_';
+        animation: blink 1s step-end infinite;
+        color: #3b82f6;
+    }
+    @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
 
-        /* Pulse glow for IIT badge */
-        @keyframes subtle-glow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-            50% { box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.15); }
-        }
-        .glow-badge { animation: subtle-glow 3s ease-in-out infinite; }
+    /* Name section below terminal */
+    .name-section {
+        margin-top: 40px;
+        opacity: 0;
+        animation: fadeUp 0.8s ease 5.5s forwards;
+    }
+    .name {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        letter-spacing: -1px;
+        background: linear-gradient(135deg, #60a5fa, #a78bfa, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .subtitle {
+        font-size: 14px;
+        color: #64748b;
+        margin-top: 8px;
+        font-family: 'JetBrains Mono', monospace;
+    }
+    .subtitle span {
+        color: #94a3b8;
+    }
 
-        /* Floating animation for role cards */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-        .role-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .role-card:hover {
-            animation: float 2s ease-in-out infinite;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-        }
+    /* Tags */
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeUp 0.6s ease 6s forwards;
+    }
+    .tag {
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-family: 'JetBrains Mono', monospace;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        color: #94a3b8;
+        background: rgba(59, 130, 246, 0.05);
+    }
 
-        /* Skill tag entrance */
-        .skill-group .skill-tag {
-            opacity: 0;
-            transform: translateY(10px) scale(0.95);
-            transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.2s ease;
-        }
-        .skill-group.visible .skill-tag { opacity: 1; transform: none; }
-        .skill-group.visible .skill-tag:nth-child(1) { transition-delay: 0ms; }
-        .skill-group.visible .skill-tag:nth-child(2) { transition-delay: 40ms; }
-        .skill-group.visible .skill-tag:nth-child(3) { transition-delay: 80ms; }
-        .skill-group.visible .skill-tag:nth-child(4) { transition-delay: 120ms; }
-        .skill-group.visible .skill-tag:nth-child(5) { transition-delay: 160ms; }
-        .skill-group.visible .skill-tag:nth-child(6) { transition-delay: 200ms; }
-        .skill-group.visible .skill-tag:nth-child(7) { transition-delay: 240ms; }
-        .skill-group.visible .skill-tag:nth-child(8) { transition-delay: 280ms; }
-        .skill-group.visible .skill-tag:nth-child(9) { transition-delay: 320ms; }
+    /* CTA Button */
+    .cta {
+        margin-top: 36px;
+        opacity: 0;
+        animation: fadeUp 0.6s ease 6.4s forwards;
+    }
+    .cta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 32px;
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+    }
+    .cta a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5);
+    }
+    .cta a svg { transition: transform 0.2s; }
+    .cta a:hover svg { transform: translateX(3px); }
 
-        /* Interest card hover pop */
-        .interest-card {
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
-        }
-        .interest-card:hover {
-            transform: translateY(-6px) scale(1.04);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        .dark .interest-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        /* Timeline */
-        .timeline-line {
-            position: absolute;
-            left: 24px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
-        }
-        .timeline-dot {
-            position: absolute;
-            left: 17px;
-            top: 6px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #3b82f6;
-            border: 3px solid white;
-            z-index: 1;
-        }
-        .dark .timeline-dot {
-            border-color: #1e293b;
-        }
+    /* Floating metrics */
+    .floating-metrics {
+        position: fixed;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .float-metric {
+        position: absolute;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 6px;
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid rgba(59, 130, 246, 0.15);
+        color: #475569;
+        opacity: 0;
+        animation: floatIn 8s ease-in-out infinite;
+    }
+    .float-metric:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+    .float-metric:nth-child(2) { top: 20%; right: 8%; animation-delay: 2s; }
+    .float-metric:nth-child(3) { bottom: 25%; left: 8%; animation-delay: 4s; }
+    .float-metric:nth-child(4) { bottom: 15%; right: 5%; animation-delay: 1s; }
+    .float-metric:nth-child(5) { top: 40%; left: 3%; animation-delay: 3s; }
+    .float-metric:nth-child(6) { top: 35%; right: 4%; animation-delay: 5s; }
 
-        /* Skill tags */
-        .skill-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .skill-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .skill-tag img {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-        }
+    @keyframes floatIn {
+        0%, 100% { opacity: 0; transform: translateY(10px); }
+        20%, 80% { opacity: 0.5; transform: translateY(0); }
+    }
 
-        /* Mobile nav */
-        .mobile-menu { transform: translateX(-100%); transition: transform 0.3s ease; }
-        .mobile-menu.open { transform: translateX(0); }
-
-        /* Card hover effects */
-        .exp-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .exp-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
-        .dark .exp-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
-
-        /* Experience bullets */
-        .exp-bullets li {
-            position: relative;
-            padding: 12px 16px;
-            border-left: 3px solid #3b82f6;
-            background: #f8fafc;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-        .dark .exp-bullets li {
-            background: rgba(30, 41, 59, 0.5);
-            border-left-color: #60a5fa;
-        }
-        .exp-bullets li:hover {
-            background: #eff6ff;
-        }
-        .dark .exp-bullets li:hover {
-            background: rgba(30, 58, 138, 0.2);
-        }
-        .metric {
-            display: inline-block;
-            font-weight: 700;
-            color: #2563eb;
-            background: #dbeafe;
-            padding: 1px 6px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-        .dark .metric {
-            color: #93c5fd;
-            background: rgba(37, 99, 235, 0.2);
-        }
-        .tech-mention {
-            font-weight: 600;
-            color: #1e293b;
-        }
-        .dark .tech-mention {
-            color: #e2e8f0;
-        }
-    </style>
+    /* Skip button */
+    .skip-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10;
+        padding: 6px 14px;
+        background: rgba(30, 41, 59, 0.6);
+        border: 1px solid rgba(100, 116, 139, 0.2);
+        border-radius: 8px;
+        color: #64748b;
+        font-size: 11px;
+        font-family: 'JetBrains Mono', monospace;
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s;
+        text-decoration: none;
+    }
+    .skip-btn:hover { color: #94a3b8; border-color: rgba(100, 116, 139, 0.4); }
+</style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased">
+<body>
 
-    <!-- Mobile Nav Toggle -->
-    <button id="mobile-nav-btn" class="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-lg bg-white dark:bg-gray-800 shadow-lg" aria-label="Toggle navigation">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
+<!-- Particle Network Canvas (distributed system visualization) -->
+<canvas id="particles"></canvas>
 
-    <!-- Dark Mode Toggle -->
-    <button id="dark-toggle" class="fixed top-4 right-4 z-50 p-2 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow" aria-label="Toggle dark mode">
-        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-    </button>
+<!-- Floating backend metrics -->
+<div class="floating-metrics">
+    <div class="float-metric">latency: 12ms</div>
+    <div class="float-metric">throughput: 10K rps</div>
+    <div class="float-metric">uptime: 99.97%</div>
+    <div class="float-metric">nodes: 24 healthy</div>
+    <div class="float-metric">cache_hit: 94.2%</div>
+    <div class="float-metric">p99: 45ms</div>
+</div>
 
-    <div class="flex min-h-screen">
-
-        <!-- Sidebar -->
-        <aside id="sidebar" class="mobile-menu fixed inset-y-0 left-0 z-40 w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 overflow-y-auto lg:sticky lg:top-0 lg:h-screen lg:transform-none">
-            <div class="p-8 text-center">
-                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-primary-500/20 mb-6">
-                    <img src="main_pic.jpeg" alt="Rajveer Singh" class="w-full h-full object-cover" loading="lazy">
-                </div>
-                <h1 class="text-xl font-bold mb-1">Rajveer Singh</h1>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">IIT Delhi &bull; B.Tech Engineering Physics</p>
-
-                <div class="text-xs text-gray-500 dark:text-gray-400 space-y-1 mb-6">
-                    <p>Keychain</p>
-                    <p>BluSmart</p>
-                    <p>Panscience AI Healthcare</p>
-                    <p>FarEye</p>
-                </div>
-
-                <!-- Social Links -->
-                <div class="flex justify-center gap-4 mb-8">
-                    <a href="https://github.com/rajveer98singh" target="_blank" rel="noopener" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" aria-label="GitHub">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rajveer-singh-iitd/" target="_blank" rel="noopener" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" aria-label="LinkedIn">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                    <a href="https://leetcode.com/razz007/" target="_blank" rel="noopener" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" aria-label="LeetCode">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
-                    </a>
-                </div>
-
-                <!-- Navigation -->
-                <nav class="space-y-1 mb-8">
-                    <a href="#about" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About</a>
-                    <a href="#experience" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Experience</a>
-                    <a href="#education" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Education</a>
-                    <a href="#skills" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Skills</a>
-                    <a href="#interests" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Interests</a>
-                </nav>
-
-                <!-- Quick Links -->
-                <div class="space-y-2 text-sm">
-                    <a href="blogs.html" class="block text-primary-600 dark:text-primary-400 hover:underline">Blogs</a>
-                    <a href="resume.html" class="block text-primary-600 dark:text-primary-400 hover:underline">Resume</a>
-                    <div class="flex items-center justify-center gap-2">
-                        <a href="https://drive.google.com/file/d/1vO1l-KVkkdzE-AECGHJIb3YufZff9Cm8/view?usp=sharing" target="_blank" class="inline-flex items-center gap-1 text-primary-600 dark:text-primary-400 hover:underline">CV Drive Link<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
-                        <button onclick="copyCV(this)" class="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Copy link">
-                            <svg class="w-3.5 h-3.5 text-gray-400 hover:text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-4 text-center text-xs text-gray-400 dark:text-gray-600 border-t border-gray-200 dark:border-gray-800">
-                &copy; <span id="year"></span> Rajveer Singh
-            </div>
-        </aside>
-
-        <!-- Sidebar Overlay (mobile) -->
-        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
-
-        <!-- Main Content -->
-        <main class="flex-1 lg:ml-0">
-            <div class="max-w-4xl mx-auto px-6 py-12 lg:py-16">
-
-                <!-- About Section (merged with Professional Summary) -->
-                <section id="about" class="mb-20 fade-up">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">About Me</span>
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-                        <h2 class="text-3xl lg:text-4xl font-bold typing-cursor">Hi, I'm Rajveer.</h2>
-                        <a href="https://home.iitd.ac.in/" target="_blank" rel="noopener" class="glow-badge flex items-center gap-2.5 px-4 py-2 bg-primary-50 dark:bg-primary-900/20 rounded-lg border border-primary-200 dark:border-primary-800 hover:border-primary-400 dark:hover:border-primary-600 transition-colors w-fit flex-shrink-0">
-                            <img src="iit-logo.png" alt="IIT Delhi" class="w-7 h-7 object-contain">
-                            <div>
-                                <p class="font-semibold text-sm text-primary-700 dark:text-primary-300 leading-tight">IIT Delhi</p>
-                                <p class="text-[11px] text-gray-500 dark:text-gray-400">B.Tech, Engg. Physics '22</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="text-gray-600 dark:text-gray-300 space-y-3 mb-8 leading-relaxed">
-                        <p>
-                            Senior Backend Engineer who turns caffeine into microservices. <strong>4+ years</strong> building scalable systems across B2B marketplaces, ride-hailing, and healthcare. Specialist in <strong>Java/Spring Boot, PostgreSQL, Redis, and AWS</strong> &mdash; from rate limiting and geospatial engines at 10K+ scale to SOC 2-compliant infrastructure and real-time ETL pipelines serving millions of users.
-                        </p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 italic">
-                            Engineering Physics is just a fancy way of saying I can debug both quantum mechanics and your production server at 2 AM. Off-duty: backpacking, F1, and convincing people my degree is real.
-                        </p>
-                    </div>
-
-                    <!-- Role Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 stagger-children fade-up">
-                        <div class="role-card bg-indigo-900 text-white p-6 rounded-xl">
-                            <h3 class="font-bold text-lg mb-2">Architect</h3>
-                            <p class="text-indigo-200 text-sm">Microservices, event-driven systems, geospatial engines &mdash; I design the blueprints that scale.</p>
-                        </div>
-                        <div class="role-card bg-teal-800 text-white p-6 rounded-xl">
-                            <h3 class="font-bold text-lg mb-2">Developer</h3>
-                            <p class="text-teal-200 text-sm">APIs, caching layers, ETL pipelines &mdash; I write the backend code that quietly keeps everything running at scale.</p>
-                        </div>
-                        <div class="role-card bg-gray-800 text-white p-6 rounded-xl">
-                            <h3 class="font-bold text-lg mb-2">Problem Solver</h3>
-                            <p class="text-gray-300 text-sm">DDoS attacks, race conditions, compliance audits &mdash; I thrive when things are on fire.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Experience Section -->
-                <section id="experience" class="mb-20 fade-up">
-                    <div id="experience-heading" class="mb-8">
-                        <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Experience</span>
-                        <h2 class="text-2xl font-bold mt-2">Work Experience</h2>
-                    </div>
-
-                    <div class="space-y-6 stagger-children fade-up">
-
-                        <!-- Keychain -->
-                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-                            <div class="flex items-start gap-4 mb-4">
-                                <img src="keychain.jpeg" alt="Keychain" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-lg">
-                                        <a href="https://www.keychain.com/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">Keychain</a>
-                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">B2B Marketplace for Brands & Manufacturers</span>
-                                    </h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Senior Backend Engineer (SDE II) &mdash; Edge Team</p>
-                                    <p class="text-xs text-gray-400 dark:text-gray-500">Gurgaon, India &bull; May 2025 &ndash; Present</p>
-                                </div>
-                            </div>
-                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Architected contract management, newsletter platform, and event-driven communications layer. Built geospatial recommendation engine and SOC 2 infrastructure.</p>
-                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
-                                <li><span class="tech-mention">Contract Microservice</span> &mdash; Spring Boot + PostgreSQL with layered amendments model and two-tier Redis + materialized-view caching; partnered with Product and Ops on quota policy <span class="metric">-85% query latency</span> <span class="metric">+60% match accuracy</span></li>
-                                <li><span class="tech-mention">Edge Newsletter Platform</span> &mdash; Led cross-functional delivery: SendGrid-aliased sender addresses, segment-based audience APIs, scheduler + CRON dispatch, inbound-parse webhooks, and <span class="tech-mention">Prefect ETL</span> pipeline streaming events into campaign_metrics warehouse</li>
-                                <li><span class="tech-mention">Event-Driven Communications</span> &mdash; Intelligent 30-min comment batching across blogs, newsletters, and LinkedIn; Twilio ingestion with retry logic; automated Zendesk ticketing and Slack alerting on every Edge event</li>
-                                <li><span class="tech-mention">Intro-Batching Framework</span> &mdash; EventBridge Scheduler with 6-hour evaluation windows and branching DRIP flows; quadtree-indexed supplier recommendation across 10K+ facilities <span class="metric">+65% engagement</span> <span class="metric">+3-4% conversion</span> <span class="metric">+40% retention</span></li>
-                                <li><span class="tech-mention">SOC 2 Infrastructure</span> &mdash; Terraform across stage + prod with IAM policies and centralized audit logging; OAuth integrations with LinkedIn &amp; Calendly <span class="metric">-80% security incidents</span> <span class="metric">+30% faster CI/CD</span></li>
-                            </ul>
-                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
-                        </div>
-
-                        <!-- BluSmart -->
-                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-                            <div class="flex items-start gap-4 mb-4">
-                                <img src="blusmart.jpeg" alt="BluSmart" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-lg">
-                                        <a href="https://www.blu-smart.com/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">BluSmart</a>
-                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">Electric Ride-Hailing Platform</span>
-                                    </h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Senior Backend Engineer (SDE II)</p>
-                                    <p class="text-xs text-gray-400 dark:text-gray-500">Gurgaon, India &bull; Sept 2024 &ndash; May 2025</p>
-                                </div>
-                            </div>
-                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Built API security layer, revamped geospatial algorithms, and engineered multi-region referral systems for millions of daily rides.</p>
-                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
-                                <li><span class="tech-mention">API Security Layer</span> &mdash; Rotating secrets, rate limiting, request throttling, and OTP-based fraud prevention &mdash; neutralized active DDoS/OTP-bombing attacks and prevented significant financial loss</li>
-                                <li><span class="tech-mention">Suggested Places Algorithm</span> &mdash; Geohashing over historical ride data; resolved concurrency and race-condition defects across high-traffic Spring Boot APIs <span class="metric">-20% booking time</span> <span class="metric">70% users from suggestions</span> <span class="metric">+45% reliability</span></li>
-                                <li><span class="tech-mention">Multi-Region Referral Program</span> &mdash; India and UAE with Spring AOP for synchronization; instrumented New Relic, Redis caching, and parallel processing for observability</li>
-                            </ul>
-                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
-                        </div>
-
-                        <!-- Panscience AI Healthcare -->
-                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-                            <div class="flex items-start gap-4 mb-4">
-                                <img src="parchaa.jpg" alt="Panscience AI" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-lg">
-                                        <a href="https://www.linkedin.com/company/pan-science-innovation/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">Panscience AI Healthcare</a>
-                                    </h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Founding Engineer</p>
-                                    <p class="text-xs text-gray-400 dark:text-gray-500">Delhi, India &bull; Feb 2023 &ndash; May 2024</p>
-                                </div>
-                            </div>
-                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Built FHIR-compliant healthcare platform from zero to production with optimized AWS infrastructure.</p>
-                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
-                                <li><span class="tech-mention">FHIR Microservices Platform</span> &mdash; Zero to production: dedicated auth/authz servers, API gateway, PostgreSQL + MongoDB + Redis data layer, secure file-upload pipeline; drove interoperability and regulatory compliance</li>
-                                <li><span class="tech-mention">AWS Cloud Architecture</span> &mdash; Hardened security groups, load balancers, and IAM roles <span class="metric">-40% AWS costs</span> through right-sizing and caching strategy</li>
-                            </ul>
-                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
-                        </div>
-
-                        <!-- FarEye -->
-                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-                            <div class="flex items-start gap-4 mb-4">
-                                <img src="fareye.jpeg" alt="FarEye" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-lg">
-                                        <a href="https://www.fareye.com/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">FarEye Technologies</a>
-                                    </h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Backend Engineer (SDE I)</p>
-                                    <p class="text-xs text-gray-400 dark:text-gray-500">Noida, India &bull; Sept 2022 &ndash; Jan 2023</p>
-                                </div>
-                            </div>
-                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Integrated 15+ carrier systems processing 100K+ daily transactions with a reusable connector framework.</p>
-                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
-                                <li><span class="tech-mention">Carrier Integration</span> &mdash; 15+ carrier/client systems via Spring Boot, REST/SOAP, and AWS S3; built reusable connector framework <span class="metric">100K+ daily transactions</span> <span class="metric">-60% integration time</span></li>
-                                <li><span class="tech-mention">Internal Hackathon Winner</span> &mdash; Led team in 3-day competition building booking-and-payments clone on Spring Boot microservices</li>
-                            </ul>
-                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
-                        </div>
-
-                        <!-- Nexmatics -->
-                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-                            <div class="flex items-start gap-4 mb-4">
-                                <img src="nexmatics.jpeg" alt="Nexmatics" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-lg">
-                                        <a href="https://www.linkedin.com/company/nexmatics/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">Nexmatics Pvt. Ltd.</a>
-                                    </h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Software Development Intern</p>
-                                    <p class="text-xs text-gray-400 dark:text-gray-500">New Delhi, India &bull; May 2021 &ndash; July 2021</p>
-                                </div>
-                            </div>
-                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Built IoT sensor communication platform with ML-driven automation for 60+ sensors across 7 regions.</p>
-                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
-                                <li><span class="tech-mention">IoT Communication Platform</span> &mdash; Python servers/clients with MySQL for 18 fans, 4 pumps, and 60+ sensors across 7 regions hosted on Azure</li>
-                                <li><span class="tech-mention">Smart Automation</span> &mdash; Weather and fertility control with alert system; automated device operations from real-time temperature/humidity data</li>
-                                <li><span class="tech-mention">ML Prediction</span> &mdash; Regression and decision-making models to predict sensor values and automate devices during specified timeframes</li>
-                            </ul>
-                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
-                        </div>
-
-                        <!-- EDC -->
-                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-                            <div class="flex items-start gap-4 mb-4">
-                                <img src="edc.jpeg" alt="eDC IIT Delhi" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-lg">
-                                        <a href="https://www.linkedin.com/company/edc-iit-delhi/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">eDC IIT Delhi</a>
-                                    </h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Marketing Executive & Coordinator</p>
-                                    <p class="text-xs text-gray-400 dark:text-gray-500">New Delhi, India &bull; Sept 2019 &ndash; May 2021</p>
-                                </div>
-                            </div>
-                            <p class="text-sm text-gray-600 dark:text-gray-300">Led a 3-tier team of 30+ executives to raise finances, managing endorsements and entrepreneurial tie-ups. Implemented a points system increasing participation by 200% YoY.</p>
-                        </div>
-
-                        <!-- E-TEX -->
-                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-                            <div class="flex items-start gap-4 mb-4">
-                                <img src="e-tex.jpeg" alt="E-TEX" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-lg">
-                                        <a href="https://www.linkedin.com/company/e-tex-healthcare-pvt-ltd/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">E-TEX</a>
-                                    </h3>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Research Intern</p>
-                                    <p class="text-xs text-gray-400 dark:text-gray-500">New Delhi, India &bull; Sept 2018 &ndash; Dec 2018</p>
-                                </div>
-                            </div>
-                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Presented at international conference on compression therapy; developed textile-based medical device.</p>
-                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
-                                <li><span class="tech-mention">Conference Presentation</span> &mdash; 6th International Conference on Textile Technology, New Delhi (Dec 2018) on compression therapy</li>
-                                <li><span class="tech-mention">Medical Device R&D</span> &mdash; Textile-based compression therapy product for massage; prototyping, material selection (elasticity, strength), sequential bladder design</li>
-                            </ul>
-                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- Education Section -->
-                <section id="education" class="mb-20 fade-up">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Education</span>
-                    <h2 class="text-2xl font-bold mt-2 mb-8">Academic Background</h2>
-
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4 p-5 bg-gradient-to-r from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-xl border-2 border-primary-200 dark:border-primary-800">
-                            <img src="iit-logo.png" alt="IIT Delhi" class="w-14 h-14 object-contain flex-shrink-0" loading="lazy">
-                            <div>
-                                <h3 class="font-bold text-lg">Indian Institute of Technology Delhi</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">B.Tech, Engineering Physics</p>
-                                <p class="text-xs text-gray-400 dark:text-gray-500">2018 &ndash; 2022</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
-                            <img src="arcadia-logo.jpeg" alt="Arcadia Academy" class="w-12 h-12 object-contain flex-shrink-0" loading="lazy">
-                            <div>
-                                <h3 class="font-semibold">Arcadia Academy, Kota, Rajasthan</h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Sr. Secondary School &bull; 2015 &ndash; 2017</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
-                            <img src="jnv-logo.png" alt="JNV" class="w-12 h-12 object-contain flex-shrink-0" loading="lazy">
-                            <div>
-                                <h3 class="font-semibold">Jawahar Navodaya Vidyalaya, Lalitpur, U.P.</h3>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">High School &bull; 2010 &ndash; 2015</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Skills Section -->
-                <section id="skills" class="mb-20 fade-up">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Technical Skills</span>
-                    <h2 class="text-2xl font-bold mt-2 mb-8">Development Skills</h2>
-
-                    <!-- Languages -->
-                    <div class="mb-8">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Languages</h3>
-                        <div class="flex flex-wrap gap-2 skill-group">
-                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300"><img src="tech-Images/java.svg" alt="Java">Java</span>
-                            <span class="skill-tag bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300">Python</span>
-                            <span class="skill-tag bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300"><img src="tech-Images/js.svg" alt="JS">JavaScript/TypeScript</span>
-                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">SQL</span>
-                            <span class="skill-tag bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300">C++</span>
-                        </div>
-                    </div>
-
-                    <!-- Backend & Frameworks -->
-                    <div class="mb-8">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Backend & Frameworks</h3>
-                        <div class="flex flex-wrap gap-2 skill-group">
-                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"><img src="tech-Images/spring.svg" alt="Spring">Spring Boot</span>
-                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"><img src="tech-Images/hibernate.svg" alt="Hibernate">Hibernate/JPA</span>
-                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"><img src="tech-Images/nodejs.svg" alt="Node.js">Node.js</span>
-                            <span class="skill-tag bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300">NestJS</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">REST</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">gRPC</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">OAuth2</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">WebSockets</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/kafka.svg" alt="Kafka">Kafka/SQS</span>
-                        </div>
-                    </div>
-
-                    <!-- Data & Caching -->
-                    <div class="mb-8">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Data & Caching</h3>
-                        <div class="flex flex-wrap gap-2 skill-group">
-                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"><img src="tech-Images/postgresql.svg" alt="PostgreSQL">PostgreSQL</span>
-                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"><img src="tech-Images/mysql.svg" alt="MySQL">MySQL</span>
-                            <span class="skill-tag bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300"><img src="tech-Images/redis.svg" alt="Redis">Redis</span>
-                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"><img src="tech-Images/mongodb.svg" alt="MongoDB">MongoDB</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">Materialized Views</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">Prefect ETL</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">Algolia</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">Typesense</span>
-                            <span class="skill-tag bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300"><img src="tech-Images/elastic.svg" alt="Elasticsearch">Elasticsearch</span>
-                        </div>
-                    </div>
-
-                    <!-- Cloud & DevOps -->
-                    <div class="mb-8">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Cloud & DevOps</h3>
-                        <div class="flex flex-wrap gap-2 skill-group">
-                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300"><img src="tech-Images/aws.svg" alt="AWS">AWS (ECS, EC2, RDS, S3, SQS, SNS, EventBridge, IAM, VPC)</span>
-                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"><img src="tech-Images/docker.svg" alt="Docker">Docker</span>
-                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"><img src="tech-Images/kubernetes.svg" alt="K8s">Kubernetes</span>
-                            <span class="skill-tag bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300">Terraform</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">CI/CD</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/nginx.svg" alt="Nginx">Nginx</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/git.svg" alt="Git">Git</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/maven.svg" alt="Maven">Maven</span>
-                        </div>
-                    </div>
-
-                    <!-- Architecture -->
-                    <div class="mb-8">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Architecture</h3>
-                        <div class="flex flex-wrap gap-2 skill-group">
-                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">Microservices</span>
-                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">Event-Driven Systems</span>
-                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">Distributed Caching</span>
-                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">Geospatial (Quadtree/Geohash)</span>
-                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">LLM APIs</span>
-                        </div>
-                    </div>
-
-                    <!-- Message Queues -->
-                    <div class="mb-8">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Message Queues & Streaming</h3>
-                        <div class="flex flex-wrap gap-2 skill-group">
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/kafka.svg" alt="Kafka">Apache Kafka</span>
-                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300"><img src="tech-Images/rabbitmq.svg" alt="RabbitMQ">RabbitMQ</span>
-                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">AWS SQS/SNS</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Interests Section -->
-                <section id="interests" class="mb-20 fade-up">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Personal</span>
-                    <h2 class="text-2xl font-bold mt-2 mb-8">Interests</h2>
-
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 stagger-children fade-up">
-                        <a href="https://en.wikipedia.org/wiki/Backpacking_(travel)" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/backpacker.jpeg" alt="Backpacking" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Backpacking</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Motorcycling" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/biking.jpeg" alt="Biking" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Biking</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Reading" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/books.jpeg" alt="Reading" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Reading</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Cricket" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/cricket.jpeg" alt="Cricket" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Cricket</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Formula_One" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/f1.png" alt="F1" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Formula 1</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Football" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/football.png" alt="Football" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Football</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Kayaking" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/kayaking.jpeg" alt="Kayaking" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Kayaking</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Physics" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/physics.png" alt="Physics" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Physics</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Politics" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/politics.jpeg" alt="Politics" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Politics</span>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Swimming_(sport)" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
-                            <img src="interest-Images/swimming.png" alt="Swimming" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
-                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Swimming</span>
-                        </a>
-                    </div>
-                </section>
-
-            </div>
-        </main>
+<!-- Hero Content -->
+<div class="hero">
+    <div class="terminal">
+        <div class="terminal-bar">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">rajveer@backend ~ /portfolio</span>
+        </div>
+        <div class="terminal-body">
+            <div class="code-line"><span class="keyword">public class</span> <span class="type">Rajveer</span> <span class="keyword">extends</span> <span class="type">BackendEngineer</span> <span class="bracket">{</span></div>
+            <div class="code-line">&nbsp;&nbsp;<span class="keyword">private</span> <span class="type">String</span> role = <span class="string">"Senior Backend Engineer"</span>;</div>
+            <div class="code-line">&nbsp;&nbsp;<span class="keyword">private</span> <span class="type">String</span> alma = <span class="string">"IIT Delhi"</span>;</div>
+            <div class="code-line">&nbsp;&nbsp;<span class="keyword">private</span> <span class="type">String[]</span> stack = <span class="bracket">{</span><span class="string">"Java"</span>, <span class="string">"Spring"</span>, <span class="string">"AWS"</span>, <span class="string">"Redis"</span><span class="bracket">}</span>;</div>
+            <div class="code-line">&nbsp;&nbsp;<span class="keyword">private</span> <span class="type">int</span> yearsOfExp = <span class="number">4</span>;</div>
+            <div class="code-line"></div>
+            <div class="code-line">&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">String</span> <span class="method">getCurrentMission</span><span class="bracket">()</span> <span class="bracket">{</span></div>
+            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Building systems that scale to millions"</span>;</div>
+            <div class="code-line">&nbsp;&nbsp;<span class="bracket">}</span></div>
+        </div>
     </div>
 
-    <script>
-        // Dark mode toggle
-        const darkToggle = document.getElementById('dark-toggle');
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
-        const html = document.documentElement;
+    <div class="name-section">
+        <div class="name">Rajveer Singh</div>
+        <div class="subtitle">
+            <span>$</span> Senior Backend Engineer <span>&bull;</span> IIT Delhi <span>'22</span>
+        </div>
+    </div>
 
-        function setDarkMode(isDark) {
-            html.classList.toggle('dark', isDark);
-            sunIcon.classList.toggle('hidden', !isDark);
-            moonIcon.classList.toggle('hidden', isDark);
-            localStorage.setItem('darkMode', isDark ? 'dark' : 'light');
-        }
+    <div class="tags">
+        <span class="tag">Microservices</span>
+        <span class="tag">Event-Driven</span>
+        <span class="tag">Distributed Systems</span>
+        <span class="tag">SOC 2</span>
+    </div>
 
-        // Initialize dark mode from preference
-        const savedTheme = localStorage.getItem('darkMode');
-        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            setDarkMode(true);
-        }
+    <div class="cta">
+        <a href="home.html">
+            Explore Portfolio
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+    </div>
+</div>
 
-        darkToggle.addEventListener('click', () => {
-            setDarkMode(!html.classList.contains('dark'));
+<a href="home.html" class="skip-btn">skip intro &rarr;</a>
+
+<script>
+// Particle Network — simulates distributed system nodes
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let w, h, particles, mouse;
+
+function init() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+    mouse = { x: w / 2, y: h / 2 };
+
+    const count = Math.min(Math.floor((w * h) / 12000), 120);
+    particles = [];
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            r: Math.random() * 2 + 1,
+            type: Math.random() > 0.7 ? 'server' : 'node',
         });
+    }
+}
 
-        // Mobile nav
-        const mobileBtn = document.getElementById('mobile-nav-btn');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('sidebar-overlay');
+function draw() {
+    ctx.clearRect(0, 0, w, h);
 
-        function toggleMobileNav() {
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('hidden');
-        }
-
-        mobileBtn.addEventListener('click', toggleMobileNav);
-        overlay.addEventListener('click', toggleMobileNav);
-
-        // Close mobile nav on link click
-        sidebar.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 1024) toggleMobileNav();
-            });
-        });
-
-        // Experience toggle
-        function toggleExp(btn) {
-            const details = btn.previousElementSibling;
-            const summary = details.previousElementSibling;
-            const isHidden = details.classList.contains('hidden');
-            details.classList.toggle('hidden');
-            summary.classList.toggle('hidden');
-            btn.innerHTML = isHidden ? 'Show less &#9650;' : 'Show more &#9660;';
-        }
-
-        // Scroll animations
-        const animEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-scale, .stagger-children, .skill-group');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.05 });
-
-        animEls.forEach(el => observer.observe(el));
-
-        // Active nav highlighting
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const top = section.offsetTop - 100;
-                if (window.scrollY >= top) current = section.getAttribute('id');
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('bg-primary-50', 'dark:bg-primary-900/20', 'text-primary-700', 'dark:text-primary-300');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('bg-primary-50', 'dark:bg-primary-900/20', 'text-primary-700', 'dark:text-primary-300');
-                }
-            });
-        });
-
-        // Copy CV link
-        function copyCV(btn) {
-            navigator.clipboard.writeText('https://drive.google.com/file/d/1vO1l-KVkkdzE-AECGHJIb3YufZff9Cm8/view?usp=sharing');
-            const svg = btn.querySelector('svg');
-            svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>';
-            svg.classList.add('text-green-500');
-            setTimeout(() => {
-                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>';
-                svg.classList.remove('text-green-500');
-            }, 2000);
-        }
-
-        // Year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // ===== Guided Tour =====
-        const tourSteps = [
-            { target: 'a[href="blogs.html"]', title: 'Blog Posts', desc: 'Read my technical deep-dives on backend engineering, security, and distributed systems.', position: 'right' },
-            { target: 'a[href="resume.html"]', title: 'Resume', desc: 'View my full resume with an embedded PDF preview, or download it directly.', position: 'right' },
-            { target: 'button[onclick="copyCV(this)"]', title: 'Copy CV Link', desc: 'One click to copy my resume link to your clipboard — easy sharing!', position: 'right' },
-            { target: '#experience-heading', title: 'Work Experience', desc: 'Click "Show more" on any role to expand the full details with highlighted metrics.', position: 'top' },
-
-            { target: '#dark-toggle', title: 'Dark Mode', desc: 'Toggle between light and dark themes. Your preference is saved automatically.', position: 'left' },
-        ];
-
-        let currentStep = -1;
-
-        function createTourUI() {
-            // Overlay
-            const overlay = document.createElement('div');
-            overlay.id = 'tour-overlay';
-            overlay.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none;transition:opacity 0.3s;';
-            document.body.appendChild(overlay);
-
-            // Tooltip
-            const tooltip = document.createElement('div');
-            tooltip.id = 'tour-tooltip';
-            tooltip.style.cssText = 'position:fixed;z-index:10000;background:white;border-radius:12px;padding:20px;max-width:300px;box-shadow:0 20px 60px rgba(0,0,0,0.3);opacity:0;transition:opacity 0.3s,transform 0.3s;pointer-events:auto;';
-            tooltip.innerHTML = `
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-                    <span id="tour-title" style="font-weight:700;font-size:15px;color:#1e293b;"></span>
-                    <span id="tour-counter" style="font-size:11px;color:#94a3b8;"></span>
-                </div>
-                <p id="tour-desc" style="font-size:13px;color:#64748b;line-height:1.5;margin:0 0 16px;"></p>
-                <div style="display:flex;gap:8px;justify-content:flex-end;">
-                    <button id="tour-skip" style="padding:6px 14px;font-size:12px;border:1px solid #e2e8f0;border-radius:8px;background:white;color:#64748b;cursor:pointer;">Skip</button>
-                    <button id="tour-next" style="padding:6px 14px;font-size:12px;border:none;border-radius:8px;background:#2563eb;color:white;cursor:pointer;font-weight:600;">Next</button>
-                </div>
-            `;
-            document.body.appendChild(tooltip);
-
-            // Spotlight hole (SVG overlay)
-            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            svg.id = 'tour-spotlight';
-            svg.style.cssText = 'position:fixed;inset:0;z-index:9999;pointer-events:none;transition:opacity 0.3s;';
-            svg.setAttribute('width', '100%');
-            svg.setAttribute('height', '100%');
-            svg.innerHTML = `
-                <defs>
-                    <mask id="tour-mask">
-                        <rect width="100%" height="100%" fill="white"/>
-                        <rect id="tour-hole" rx="12" ry="12" fill="black"/>
-                    </mask>
-                </defs>
-                <rect width="100%" height="100%" fill="rgba(0,0,0,0.5)" mask="url(#tour-mask)"/>
-            `;
-            document.body.appendChild(svg);
-
-            document.getElementById('tour-next').addEventListener('click', nextStep);
-            document.getElementById('tour-skip').addEventListener('click', endTour);
-        }
-
-        function showStep(index) {
-            const step = tourSteps[index];
-            const el = document.querySelector(step.target);
-            if (!el) { nextStep(); return; }
-
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            setTimeout(() => {
-                const rect = el.getBoundingClientRect();
-                const pad = 8;
-
-                // Spotlight hole
-                const hole = document.getElementById('tour-hole');
-                hole.setAttribute('x', rect.left - pad);
-                hole.setAttribute('y', rect.top - pad);
-                hole.setAttribute('width', rect.width + pad * 2);
-                hole.setAttribute('height', rect.height + pad * 2);
-
-                // Tooltip positioning
-                const tooltip = document.getElementById('tour-tooltip');
-                const tw = 300;
-
-                let top, left;
-                if (step.position === 'right') {
-                    top = rect.top + rect.height / 2 - 60;
-                    left = rect.right + 16;
-                    if (left + tw > window.innerWidth) { left = rect.left - tw - 16; }
-                } else if (step.position === 'left') {
-                    top = rect.top + rect.height / 2 - 60;
-                    left = rect.left - tw - 16;
-                    if (left < 0) { left = rect.right + 16; }
-                } else {
-                    top = rect.top - 160;
-                    left = rect.left + rect.width / 2 - tw / 2;
-                    if (top < 10) { top = rect.bottom + 16; }
-                }
-
-                top = Math.max(10, Math.min(top, window.innerHeight - 200));
-                left = Math.max(10, Math.min(left, window.innerWidth - tw - 10));
-
-                tooltip.style.top = top + 'px';
-                tooltip.style.left = left + 'px';
-                tooltip.style.opacity = '1';
-                tooltip.style.transform = 'translateY(0)';
-
-                document.getElementById('tour-title').textContent = step.title;
-                document.getElementById('tour-desc').textContent = step.desc;
-                document.getElementById('tour-counter').textContent = (index + 1) + ' / ' + tourSteps.length;
-
-                const nextBtn = document.getElementById('tour-next');
-                nextBtn.textContent = index === tourSteps.length - 1 ? 'Done' : 'Next';
-
-                document.getElementById('tour-spotlight').style.opacity = '1';
-
-                // Make spotlight area clickable through
-                el.style.position = 'relative';
-                el.style.zIndex = '10000';
-            }, 400);
-        }
-
-        function nextStep() {
-            // Reset previous element z-index
-            if (currentStep >= 0 && currentStep < tourSteps.length) {
-                const prevEl = document.querySelector(tourSteps[currentStep].target);
-                if (prevEl) { prevEl.style.zIndex = ''; prevEl.style.position = ''; }
+    // Draw connections
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 150) {
+                const alpha = (1 - dist / 150) * 0.15;
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
             }
-
-            currentStep++;
-            if (currentStep >= tourSteps.length) { endTour(); return; }
-            showStep(currentStep);
         }
 
-        function endTour() {
-            // Cleanup z-index on all targets
-            tourSteps.forEach(s => {
-                const el = document.querySelector(s.target);
-                if (el) { el.style.zIndex = ''; el.style.position = ''; }
-            });
+        // Mouse interaction — bright glowing lines to nearby particles
+        const mx = particles[i].x - mouse.x;
+        const my = particles[i].y - mouse.y;
+        const md = Math.sqrt(mx * mx + my * my);
+        if (md < 250) {
+            const alpha = (1 - md / 250);
 
-            const tooltip = document.getElementById('tour-tooltip');
-            const spotlight = document.getElementById('tour-spotlight');
-            if (tooltip) tooltip.style.opacity = '0';
-            if (spotlight) spotlight.style.opacity = '0';
+            // Glow layer (thick, low opacity)
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(124, 58, 237, ${alpha * 0.3})`;
+            ctx.lineWidth = 4;
+            ctx.stroke();
 
-            setTimeout(() => {
-                ['tour-overlay', 'tour-tooltip', 'tour-spotlight'].forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.remove();
-                });
-            }, 300);
+            // Core line (thin, bright)
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(167, 139, 250, ${alpha * 0.8})`;
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
 
-            localStorage.setItem('tourCompleted', 'true');
-            const tourBtn = document.getElementById('tour-btn');
-            if (tourBtn) tourBtn.style.display = 'flex';
+            // Light up the connected particle
+            ctx.beginPath();
+            ctx.arc(particles[i].x, particles[i].y, particles[i].r + 3, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(124, 58, 237, ${alpha * 0.4})`;
+            ctx.fill();
         }
+    }
 
-        function startTour() {
-            currentStep = -1;
-            createTourUI();
-            nextStep();
+    // Draw particles
+    for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        if (p.type === 'server') {
+            ctx.fillStyle = 'rgba(96, 165, 250, 0.6)';
+            ctx.shadowColor = 'rgba(59, 130, 246, 0.3)';
+            ctx.shadowBlur = 10;
+        } else {
+            ctx.fillStyle = 'rgba(148, 163, 184, 0.3)';
+            ctx.shadowBlur = 0;
         }
+        ctx.fill();
+        ctx.shadowBlur = 0;
+    }
 
-        // Auto-start tour for first-time visitors
-        if (!localStorage.getItem('tourCompleted')) {
-            setTimeout(startTour, 1500);
-        }
+    requestAnimationFrame(draw);
+}
 
-        // Replay tour button (bottom-left)
-        const tourBtn = document.createElement('button');
-        tourBtn.id = 'tour-btn';
-        tourBtn.title = 'Take a tour';
-        tourBtn.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:50;display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;background:white;border:1px solid #e2e8f0;box-shadow:0 2px 10px rgba(0,0,0,0.1);cursor:pointer;font-size:12px;font-weight:600;color:#475569;transition:box-shadow 0.2s,transform 0.2s;';
-        tourBtn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Tour';
-        tourBtn.addEventListener('click', () => { tourBtn.style.display = 'none'; startTour(); });
-        tourBtn.addEventListener('mouseenter', () => { tourBtn.style.transform = 'translateY(-2px)'; tourBtn.style.boxShadow = '0 4px 15px rgba(0,0,0,0.15)'; });
-        tourBtn.addEventListener('mouseleave', () => { tourBtn.style.transform = ''; tourBtn.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)'; });
-        document.body.appendChild(tourBtn);
+window.addEventListener('resize', init);
+window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
-        // Respect dark mode for tour button
-        const updateTourBtnTheme = () => {
-            if (html.classList.contains('dark')) {
-                tourBtn.style.background = '#1e293b'; tourBtn.style.borderColor = '#334155'; tourBtn.style.color = '#94a3b8';
-            } else {
-                tourBtn.style.background = 'white'; tourBtn.style.borderColor = '#e2e8f0'; tourBtn.style.color = '#475569';
-            }
-        };
-        updateTourBtnTheme();
-        const origSetDark = setDarkMode;
-        setDarkMode = (isDark) => { origSetDark(isDark); updateTourBtnTheme(); };
-    </script>
+init();
+draw();
+</script>
 
 </body>
 </html>
