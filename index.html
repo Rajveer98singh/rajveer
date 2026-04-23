@@ -406,8 +406,10 @@
 
                 <!-- Experience Section -->
                 <section id="experience" class="mb-20 fade-up">
-                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Experience</span>
-                    <h2 class="text-2xl font-bold mt-2 mb-8">Work Experience</h2>
+                    <div id="experience-heading" class="mb-8">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Experience</span>
+                        <h2 class="text-2xl font-bold mt-2">Work Experience</h2>
+                    </div>
 
                     <div class="space-y-6 stagger-children fade-up">
 
@@ -826,6 +828,193 @@
 
         // Year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ===== Guided Tour =====
+        const tourSteps = [
+            { target: 'a[href="blogs.html"]', title: 'Blog Posts', desc: 'Read my technical deep-dives on backend engineering, security, and distributed systems.', position: 'right' },
+            { target: 'a[href="resume.html"]', title: 'Resume', desc: 'View my full resume with an embedded PDF preview, or download it directly.', position: 'right' },
+            { target: 'button[onclick="copyCV(this)"]', title: 'Copy CV Link', desc: 'One click to copy my resume link to your clipboard — easy sharing!', position: 'right' },
+            { target: '#experience-heading', title: 'Work Experience', desc: 'Click "Show more" on any role to expand the full details with highlighted metrics.', position: 'top' },
+
+            { target: '#dark-toggle', title: 'Dark Mode', desc: 'Toggle between light and dark themes. Your preference is saved automatically.', position: 'left' },
+        ];
+
+        let currentStep = -1;
+
+        function createTourUI() {
+            // Overlay
+            const overlay = document.createElement('div');
+            overlay.id = 'tour-overlay';
+            overlay.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none;transition:opacity 0.3s;';
+            document.body.appendChild(overlay);
+
+            // Tooltip
+            const tooltip = document.createElement('div');
+            tooltip.id = 'tour-tooltip';
+            tooltip.style.cssText = 'position:fixed;z-index:10000;background:white;border-radius:12px;padding:20px;max-width:300px;box-shadow:0 20px 60px rgba(0,0,0,0.3);opacity:0;transition:opacity 0.3s,transform 0.3s;pointer-events:auto;';
+            tooltip.innerHTML = `
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+                    <span id="tour-title" style="font-weight:700;font-size:15px;color:#1e293b;"></span>
+                    <span id="tour-counter" style="font-size:11px;color:#94a3b8;"></span>
+                </div>
+                <p id="tour-desc" style="font-size:13px;color:#64748b;line-height:1.5;margin:0 0 16px;"></p>
+                <div style="display:flex;gap:8px;justify-content:flex-end;">
+                    <button id="tour-skip" style="padding:6px 14px;font-size:12px;border:1px solid #e2e8f0;border-radius:8px;background:white;color:#64748b;cursor:pointer;">Skip</button>
+                    <button id="tour-next" style="padding:6px 14px;font-size:12px;border:none;border-radius:8px;background:#2563eb;color:white;cursor:pointer;font-weight:600;">Next</button>
+                </div>
+            `;
+            document.body.appendChild(tooltip);
+
+            // Spotlight hole (SVG overlay)
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.id = 'tour-spotlight';
+            svg.style.cssText = 'position:fixed;inset:0;z-index:9999;pointer-events:none;transition:opacity 0.3s;';
+            svg.setAttribute('width', '100%');
+            svg.setAttribute('height', '100%');
+            svg.innerHTML = `
+                <defs>
+                    <mask id="tour-mask">
+                        <rect width="100%" height="100%" fill="white"/>
+                        <rect id="tour-hole" rx="12" ry="12" fill="black"/>
+                    </mask>
+                </defs>
+                <rect width="100%" height="100%" fill="rgba(0,0,0,0.5)" mask="url(#tour-mask)"/>
+            `;
+            document.body.appendChild(svg);
+
+            document.getElementById('tour-next').addEventListener('click', nextStep);
+            document.getElementById('tour-skip').addEventListener('click', endTour);
+        }
+
+        function showStep(index) {
+            const step = tourSteps[index];
+            const el = document.querySelector(step.target);
+            if (!el) { nextStep(); return; }
+
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            setTimeout(() => {
+                const rect = el.getBoundingClientRect();
+                const pad = 8;
+
+                // Spotlight hole
+                const hole = document.getElementById('tour-hole');
+                hole.setAttribute('x', rect.left - pad);
+                hole.setAttribute('y', rect.top - pad);
+                hole.setAttribute('width', rect.width + pad * 2);
+                hole.setAttribute('height', rect.height + pad * 2);
+
+                // Tooltip positioning
+                const tooltip = document.getElementById('tour-tooltip');
+                const tw = 300;
+
+                let top, left;
+                if (step.position === 'right') {
+                    top = rect.top + rect.height / 2 - 60;
+                    left = rect.right + 16;
+                    if (left + tw > window.innerWidth) { left = rect.left - tw - 16; }
+                } else if (step.position === 'left') {
+                    top = rect.top + rect.height / 2 - 60;
+                    left = rect.left - tw - 16;
+                    if (left < 0) { left = rect.right + 16; }
+                } else {
+                    top = rect.top - 160;
+                    left = rect.left + rect.width / 2 - tw / 2;
+                    if (top < 10) { top = rect.bottom + 16; }
+                }
+
+                top = Math.max(10, Math.min(top, window.innerHeight - 200));
+                left = Math.max(10, Math.min(left, window.innerWidth - tw - 10));
+
+                tooltip.style.top = top + 'px';
+                tooltip.style.left = left + 'px';
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translateY(0)';
+
+                document.getElementById('tour-title').textContent = step.title;
+                document.getElementById('tour-desc').textContent = step.desc;
+                document.getElementById('tour-counter').textContent = (index + 1) + ' / ' + tourSteps.length;
+
+                const nextBtn = document.getElementById('tour-next');
+                nextBtn.textContent = index === tourSteps.length - 1 ? 'Done' : 'Next';
+
+                document.getElementById('tour-spotlight').style.opacity = '1';
+
+                // Make spotlight area clickable through
+                el.style.position = 'relative';
+                el.style.zIndex = '10000';
+            }, 400);
+        }
+
+        function nextStep() {
+            // Reset previous element z-index
+            if (currentStep >= 0 && currentStep < tourSteps.length) {
+                const prevEl = document.querySelector(tourSteps[currentStep].target);
+                if (prevEl) { prevEl.style.zIndex = ''; prevEl.style.position = ''; }
+            }
+
+            currentStep++;
+            if (currentStep >= tourSteps.length) { endTour(); return; }
+            showStep(currentStep);
+        }
+
+        function endTour() {
+            // Cleanup z-index on all targets
+            tourSteps.forEach(s => {
+                const el = document.querySelector(s.target);
+                if (el) { el.style.zIndex = ''; el.style.position = ''; }
+            });
+
+            const tooltip = document.getElementById('tour-tooltip');
+            const spotlight = document.getElementById('tour-spotlight');
+            if (tooltip) tooltip.style.opacity = '0';
+            if (spotlight) spotlight.style.opacity = '0';
+
+            setTimeout(() => {
+                ['tour-overlay', 'tour-tooltip', 'tour-spotlight'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.remove();
+                });
+            }, 300);
+
+            localStorage.setItem('tourCompleted', 'true');
+            const tourBtn = document.getElementById('tour-btn');
+            if (tourBtn) tourBtn.style.display = 'flex';
+        }
+
+        function startTour() {
+            currentStep = -1;
+            createTourUI();
+            nextStep();
+        }
+
+        // Auto-start tour for first-time visitors
+        if (!localStorage.getItem('tourCompleted')) {
+            setTimeout(startTour, 1500);
+        }
+
+        // Replay tour button (bottom-left)
+        const tourBtn = document.createElement('button');
+        tourBtn.id = 'tour-btn';
+        tourBtn.title = 'Take a tour';
+        tourBtn.style.cssText = 'position:fixed;bottom:20px;left:20px;z-index:50;display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;background:white;border:1px solid #e2e8f0;box-shadow:0 2px 10px rgba(0,0,0,0.1);cursor:pointer;font-size:12px;font-weight:600;color:#475569;transition:box-shadow 0.2s,transform 0.2s;';
+        tourBtn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Tour';
+        tourBtn.addEventListener('click', () => { tourBtn.style.display = 'none'; startTour(); });
+        tourBtn.addEventListener('mouseenter', () => { tourBtn.style.transform = 'translateY(-2px)'; tourBtn.style.boxShadow = '0 4px 15px rgba(0,0,0,0.15)'; });
+        tourBtn.addEventListener('mouseleave', () => { tourBtn.style.transform = ''; tourBtn.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)'; });
+        document.body.appendChild(tourBtn);
+
+        // Respect dark mode for tour button
+        const updateTourBtnTheme = () => {
+            if (html.classList.contains('dark')) {
+                tourBtn.style.background = '#1e293b'; tourBtn.style.borderColor = '#334155'; tourBtn.style.color = '#94a3b8';
+            } else {
+                tourBtn.style.background = 'white'; tourBtn.style.borderColor = '#e2e8f0'; tourBtn.style.color = '#475569';
+            }
+        };
+        updateTourBtnTheme();
+        const origSetDark = setDarkMode;
+        setDarkMode = (isDark) => { origSetDark(isDark); updateTourBtnTheme(); };
     </script>
 
 </body>
