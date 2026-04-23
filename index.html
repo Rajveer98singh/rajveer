@@ -1,1077 +1,832 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132792015-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rajveer Singh | Senior Backend Engineer</title>
 
-  gtag('config', 'UA-132792015-1');
-</script>
-<script>
-    function toggleExperienceKeychain() {
-        var experienceParagraph = document.querySelector('.experience-paragraph-keychain');
-        var fullExperienceParagraph = document.querySelector('.experience-list-keychain');
-        var readMoreButton = document.querySelector('.read-more-button-keychain');
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Senior Backend Engineer with 4+ years architecting scalable microservices and event-driven platforms. Java/Spring Boot, PostgreSQL, Redis, AWS specialist. IIT Delhi graduate.">
+    <meta name="keywords" content="Rajveer Singh, Senior Backend Engineer, Java, Spring Boot, AWS, PostgreSQL, IIT Delhi, Software Engineer, Microservices">
+    <meta name="author" content="Rajveer Singh">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rajveer98singh.github.io/rajveer/">
 
-        if (fullExperienceParagraph.style.display === "none") {
-			experienceParagraph.style.display = "none";
-            fullExperienceParagraph.style.display = "block";
-            readMoreButton.textContent = "▲";
-        } else {
-			experienceParagraph.style.display = "block";
-            fullExperienceParagraph.style.display = "none";
-            readMoreButton.textContent = "▼";
-        }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rajveer98singh.github.io/rajveer/">
+    <meta property="og:title" content="Rajveer Singh | Senior Backend Engineer">
+    <meta property="og:description" content="Senior Backend Engineer with 4+ years architecting scalable microservices. Java/Spring Boot, PostgreSQL, Redis, AWS. IIT Delhi B.Tech.">
+    <meta property="og:image" content="https://rajveer98singh.github.io/rajveer/main_pic.jpeg">
+    <meta property="og:site_name" content="Rajveer Singh Portfolio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://rajveer98singh.github.io/rajveer/">
+    <meta name="twitter:title" content="Rajveer Singh | Senior Backend Engineer">
+    <meta name="twitter:description" content="Senior Backend Engineer with 4+ years architecting scalable microservices. Java/Spring Boot, PostgreSQL, Redis, AWS. IIT Delhi B.Tech.">
+    <meta name="twitter:image" content="https://rajveer98singh.github.io/rajveer/main_pic.jpeg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rajveer Singh",
+        "url": "https://rajveer98singh.github.io/rajveer/",
+        "image": "https://rajveer98singh.github.io/rajveer/main_pic.jpeg",
+        "jobTitle": "Senior Backend Engineer",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Indian Institute of Technology Delhi"
+        },
+        "sameAs": [
+            "https://github.com/rajveer98singh",
+            "https://www.linkedin.com/in/rajveer-singh-iitd/",
+            "https://leetcode.com/razz007/"
+        ]
     }
-    function toggleExperienceBluSmart() {
-        var experienceParagraph = document.querySelector('.experience-paragraph-blusmart');
-        var fullExperienceParagraph = document.querySelector('.experience-list-blusmart');
-        var readMoreButton = document.querySelector('.read-more-button-blusmart');
+    </script>
 
-        if (fullExperienceParagraph.style.display === "none") {
-			experienceParagraph.style.display = "none";
-            fullExperienceParagraph.style.display = "block";
-            readMoreButton.textContent = "▲";
-        } else {
-			experienceParagraph.style.display = "block";
-            fullExperienceParagraph.style.display = "none";
-            readMoreButton.textContent = "▼";
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
         }
-    }
-	function toggleExperiencePSI() {
-        var experienceParagraph = document.querySelector('.experience-paragraph-psi');
-        var fullExperienceParagraph = document.querySelector('.experience-list-psi');
-        var readMoreButton = document.querySelector('.read-more-button-psi');
+    </script>
 
-        if (fullExperienceParagraph.style.display === "none") {
-			experienceParagraph.style.display = "none";
-            fullExperienceParagraph.style.display = "block";
-            readMoreButton.textContent = "▲";
-        } else {
-			experienceParagraph.style.display = "block";
-            fullExperienceParagraph.style.display = "none";
-            readMoreButton.textContent = "▼";
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132792015-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132792015-1');
+    </script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 3px; }
+
+        /* Smooth transitions for dark mode */
+        * { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+
+        /* Animate on scroll — multiple variants */
+        .fade-up, .fade-left, .fade-right, .fade-scale {
+            opacity: 0;
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-    }
-	function toggleExperienceFareye() {
-        var experienceParagraph = document.querySelector('.experience-paragraph-fareye');
-        var fullExperienceParagraph = document.querySelector('.experience-list-fareye');
-        var readMoreButton = document.querySelector('.read-more-button-fareye');
-
-        if (fullExperienceParagraph.style.display === "none") {
-			experienceParagraph.style.display = "none";
-            fullExperienceParagraph.style.display = "block";
-            readMoreButton.textContent = "▲";
-        } else {
-			experienceParagraph.style.display = "block";
-            fullExperienceParagraph.style.display = "none";
-            readMoreButton.textContent = "▼";
+        .fade-up { transform: translateY(40px); }
+        .fade-left { transform: translateX(-40px); }
+        .fade-right { transform: translateX(40px); }
+        .fade-scale { transform: scale(0.92); }
+        .fade-up.visible, .fade-left.visible, .fade-right.visible, .fade-scale.visible {
+            opacity: 1;
+            transform: none;
         }
-    }
-	function toggleExperienceNexmatics() {
-        var experienceParagraph = document.querySelector('.experience-paragraph-nexmatics');
-        var fullExperienceParagraph = document.querySelector('.experience-list-nexmatics');
-        var readMoreButton = document.querySelector('.read-more-button-nexmatics');
 
-        if (fullExperienceParagraph.style.display === "none") {
-			experienceParagraph.style.display = "none";
-            fullExperienceParagraph.style.display = "block";
-            readMoreButton.textContent = "▲";
-        } else {
-			experienceParagraph.style.display = "block";
-            fullExperienceParagraph.style.display = "none";
-            readMoreButton.textContent = "▼";
+        /* Stagger children animation */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
-    }
-	function toggleExperienceEDC() {
-        var experienceParagraph = document.querySelector('.experience-paragraph-edc');
-        var fullExperienceParagraph = document.querySelector('.full-experience-paragraph-edc');
-        var readMoreButton = document.querySelector('.read-more-button-edc');
+        .stagger-children.visible > * { opacity: 1; transform: none; }
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 80ms; }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 160ms; }
+        .stagger-children.visible > *:nth-child(4) { transition-delay: 240ms; }
+        .stagger-children.visible > *:nth-child(5) { transition-delay: 320ms; }
+        .stagger-children.visible > *:nth-child(6) { transition-delay: 400ms; }
+        .stagger-children.visible > *:nth-child(7) { transition-delay: 480ms; }
+        .stagger-children.visible > *:nth-child(8) { transition-delay: 560ms; }
+        .stagger-children.visible > *:nth-child(9) { transition-delay: 640ms; }
+        .stagger-children.visible > *:nth-child(10) { transition-delay: 720ms; }
 
-        if (fullExperienceParagraph.style.display === "none") {
-			experienceParagraph.style.display = "none";
-            fullExperienceParagraph.style.display = "block";
-            readMoreButton.textContent = "▲";
-        } else {
-			experienceParagraph.style.display = "block";
-            fullExperienceParagraph.style.display = "none";
-            readMoreButton.textContent = "▼";
+        /* Typing cursor for heading */
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: #3b82f6;
+            font-weight: 300;
         }
-    }
-	function toggleExperienceEtex() {
-        var experienceParagraph = document.querySelector('.experience-paragraph-etex');
-        var fullExperienceParagraph = document.querySelector('.experience-list-etex');
-        var readMoreButton = document.querySelector('.read-more-button-etex');
 
-        if (fullExperienceParagraph.style.display === "none") {
-			experienceParagraph.style.display = "none";
-            fullExperienceParagraph.style.display = "block";
-            readMoreButton.textContent = "▲";
-        } else {
-			experienceParagraph.style.display = "block";
-            fullExperienceParagraph.style.display = "none";
-            readMoreButton.textContent = "▼";
+        /* Pulse glow for IIT badge */
+        @keyframes subtle-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+            50% { box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.15); }
         }
-    }
-	
-</script>
+        .glow-badge { animation: subtle-glow 3s ease-in-out infinite; }
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Rajveer</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+        /* Floating animation for role cards */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        .role-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .role-card:hover {
+            animation: float 2s ease-in-out infinite;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+        /* Skill tag entrance */
+        .skill-group .skill-tag {
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+            transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.2s ease;
+        }
+        .skill-group.visible .skill-tag { opacity: 1; transform: none; }
+        .skill-group.visible .skill-tag:nth-child(1) { transition-delay: 0ms; }
+        .skill-group.visible .skill-tag:nth-child(2) { transition-delay: 40ms; }
+        .skill-group.visible .skill-tag:nth-child(3) { transition-delay: 80ms; }
+        .skill-group.visible .skill-tag:nth-child(4) { transition-delay: 120ms; }
+        .skill-group.visible .skill-tag:nth-child(5) { transition-delay: 160ms; }
+        .skill-group.visible .skill-tag:nth-child(6) { transition-delay: 200ms; }
+        .skill-group.visible .skill-tag:nth-child(7) { transition-delay: 240ms; }
+        .skill-group.visible .skill-tag:nth-child(8) { transition-delay: 280ms; }
+        .skill-group.visible .skill-tag:nth-child(9) { transition-delay: 320ms; }
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+        /* Interest card hover pop */
+        .interest-card {
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+        }
+        .interest-card:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .dark .interest-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+        /* Timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 17px;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 3px solid white;
+            z-index: 1;
+        }
+        .dark .timeline-dot {
+            border-color: #1e293b;
+        }
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+        /* Skill tags */
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .skill-tag img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+        /* Mobile nav */
+        .mobile-menu { transform: translateX(-100%); transition: transform 0.3s ease; }
+        .mobile-menu.open { transform: translateX(0); }
 
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        /* Card hover effects */
+        .exp-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .exp-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .dark .exp-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(main_pic.jpeg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Rajveer Singh</a></h1>
-				<span class="position"> Indian Institute of Technology Delhi <br />
+        /* Experience bullets */
+        .exp-bullets li {
+            position: relative;
+            padding: 12px 16px;
+            border-left: 3px solid #3b82f6;
+            background: #f8fafc;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .dark .exp-bullets li {
+            background: rgba(30, 41, 59, 0.5);
+            border-left-color: #60a5fa;
+        }
+        .exp-bullets li:hover {
+            background: #eff6ff;
+        }
+        .dark .exp-bullets li:hover {
+            background: rgba(30, 58, 138, 0.2);
+        }
+        .metric {
+            display: inline-block;
+            font-weight: 700;
+            color: #2563eb;
+            background: #dbeafe;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        .dark .metric {
+            color: #93c5fd;
+            background: rgba(37, 99, 235, 0.2);
+        }
+        .tech-mention {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .dark .tech-mention {
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased">
 
-					<br />
-					Keychain
-					<br />
-					<br />
-					BluSmart
-					<br />
-					Panscience AI Healthcare
-					<br />
-					FarEye
-				</span>
-					<a href="https://github.com/rajveer98singh" target="_blank">
-						<font size="2"> GitHub </font> 
-					</a>
-					<br/>
-					<a href="https://www.linkedin.com/in/rajveer-singh-iitd/" target="_blank">
-						<font size="2"> LinkedIn </font>
-					</a>
-					<!-- <br/> 
-					<a href="https://www.instagram.com/rajveer.1nsta/">
-						<font size="2"> [Instagram] </font>
-					</a> -->
-					<br />
-					<a href="https://leetcode.com/razz007/" target="_blank">
-						<font size="2"> LeetCode </font>
-					</a>
-					<br />
-					<br/>        
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<!-- <li><a href="#" data-nav-section="publications">Projects</a></li> -->
-						<!-- <li><a href="/Users/rajveer/Desktop/MyCV/seungkim/index1.html" target="_blank">Blog</a></li>
-						<li><a href="https://drive.google.com/file/d/1avOcR8yvOFYJTwiof_ugFTj0-jay5_4N/view?usp=sharing" target="_blank">CV</a></li> -->
-					</ul>
-				</div>
-			</nav>
-			<div style="text-align: center;">
-				<a href="blogs.html">Blogs</a>
-			</div>
-			<div style="text-align: center;">
-				<a href="downloads/Rajveer_IIT_Delhi.pdf" target="_blank">View CV</a>
-			</div>
-			<div style="text-align: center;">
-				<a href="https://drive.google.com/file/d/1hPryTA97IJ43VwOAlnOU0BQuokZ37mob/view?usp=sharing" target="_blank">CV Drive Link</a>
-			</div>
-            <br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br>
+    <!-- Mobile Nav Toggle -->
+    <button id="mobile-nav-btn" class="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-lg bg-white dark:bg-gray-800 shadow-lg" aria-label="Toggle navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
 
+    <!-- Dark Mode Toggle -->
+    <button id="dark-toggle" class="fixed top-4 right-4 z-50 p-2 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow" aria-label="Toggle dark mode">
+        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+    </button>
 
+    <div class="flex min-h-screen">
 
-			<div class="colorlib-footer">
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
-			</div>
-
-		</aside>
-
-		<div id="colorlib-main">
-
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Me</span>
-										<h3><strong>Hi, I'm Rajveer.</strong></h3>
-                                        <p>
-											Meet Rajveer, your friendly neighborhood tech enthusiast with a background in Engineering Physics. I'm like the Daily Scrum Master of the tech world, ensuring that the forces of code align for project success. I've crafted backend infrastructures with AWS and Terraform that are so robust, they're practically invincible. VPC PrivateLink, API Gateways, JWT authentication – you name it, I've tamed it.
-											<br>
-											But wait, there's more! I've mastered the art of integrating systems using Node.js, NestJS, and PostgreSQL, making data dance to my tune. I've even dabbled in the mystical realms of ChatGPT and open APIs to conjure decision tree models for cutting-edge healthcare solutions.
-											<br>
-											And when it comes to quality, I'm as strict as a code sensei. I put applications through rigorous functional and security testing, ensuring they're in tip-top shape.
-											<br>
-											So, if you're ready to embark on a journey of tech excellence and innovation, let's connect and shape the future together. Because with Rajveer on your team, the possibilities are as endless as an infinite loop!
-                                        </p>
-                                    </div>
-								</div>
-								<div class="row features-big text-center wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-									<div class="col-md-4 mb-5">
-										<div style="background-color: #2a3584; padding: 10%; margin-left: 7%; color: white; margin-top: 50px; border-radius: 5px;" class="card card-body hoverable">
-											<i class="fa fa-laptop white-text fa-3x mb-4" aria-hidden="true"></i>
-											
-											<h5 class="font-weight-bold white-text text-uppercase mb-4"  style="color: white; font-weight: bold;">Architect</h5>
-											<p class="white-text">I love making high-level design choices, including software
-												coding standards, tools &amp; platforms.</p>
-										</div>
-									</div>
-									<div class="col-md-4 mb-5">
-										<div style="background-color: #004D40; padding: 10%; margin-left: 7%; color: white; margin-top: 50px; border-radius: 5px;" class="card card-body hoverable">
-											<i class="fa fa-code white-text fa-3x mb-4" aria-hidden="true"></i>
-											<h5 class="font-weight-bold white-text text-uppercase mb-4" style="color: white; font-weight: bold;">Developer</h5>
-											<p class="white-text">I am involved in every facet of software development
-												process, including research, design, programming &amp; delivery.</p>
-										</div>
-									</div>
-									<div class="col-md-4 mb-5">
-										<div style="background-color: #263238;  padding: 10%; margin-left: 7%; color: white; margin-top: 50px; border-radius: 5px;" class="card card-body hoverable">
-											<i class="fa fa-pencil white-text fa-3x mb-4" aria-hidden="true"></i>
-											<h5 class="font-weight-bold white-text text-uppercase mb-4"  style="color: white; font-weight: bold;">Designer</h5>
-											<p class="white-text">I love designing the products in such a way that can enhance the user's experience &amp; save their time.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-				
-			</section>
-
-			<!-- <section class="colorlib-about" data-section="publications">
-			
-                            <div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-						                <span class="heading-meta">Publication</span>
-										<h2 class="colorlib-heading animate-box" style="margin-bottom: 1em;">Conference Publications</h2>
-					<div>
-                                             <p>
-                                             <a href="https://research.nvidia.com/labs/toronto-ai/NFLDM/assets/paper.pdf">
-                                                <font size="4"><strong>NeuralField-LDM: Scene Generation with Hierarchical Latent Diffusion Models</strong></font>
-                                                </a>
-                                                <br>
-                                             <font><strong>Seung Wook Kim</strong>*, Bradley Brown*, Kangxue Yin, Karsten Kreis, Katja Schwarz, Daiqing Li, Robin Rombach, Antonio Torralba, Sanja Fidler</font> <br>
-                                             <a href="https://research.nvidia.com/labs/toronto-ai/NFLDM/">
-						<font size="2"> [Project page] </font>
-                                             </a>
-                                              <br>
-                                              <font color="#18AF1D"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2023 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="https://arxiv.org/abs/2304.08818">
-                                                <font size="4"><strong>Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models</strong></font>
-                                                </a>
-                                                <br>
-                                                <font>Andreas Blattmann*, Robin Rombach*, Huan Ling*, Tim Dockhorn*, <strong>Seung Wook Kim</strong>, Sanja Fidler, Karsten Kreis</font> <br>
-                                             <a href="https://research.nvidia.com/labs/toronto-ai/VideoLDM/">
-						<font size="2"> [Project page] </font>
-                                             </a>
-                                              <br>
-                                              <font color="#18AF1D"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2023 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="https://arxiv.org/abs/2206.02903">
-                                                <font size="4"><strong>PolymorphicGAN: Generating Aligned Samples Across Multiple Domains With Learned Morph Maps</strong></font>
-                                                </a>
-                                                <br>
-                                             <font><strong>Seung Wook Kim</strong>, Karsten Kreis, Daiqing Li, Antonio Torralba, Sanja Fidler</font> <br>
-                                             <a href="https://nv-tlabs.github.io/PMGAN/">
-						<font size="2"> [Project page] </font>
-                                             </a>
-                                              <br>
-                                              <font color="red"><strong>(Oral)</strong></font>
-                                              <font color="#18AF1D"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="https://arxiv.org/abs/2201.04684">
-                                                <font size="4"><strong>BigDatasetGAN: Synthesizing ImageNet with Pixel-wise Annotations</strong></font>
-                                                </a>
-                                                <br>
-                                             <font>Daiqing Li, Huan Ling, <strong>Seung Wook Kim</strong>, Karsten Kreis, Adela Barriuso, Sanja Fidler, Antonio Torralba</font> <br>
-                                             <a href="https://nv-tlabs.github.io/big-datasetgan/">
-						<font size="2"> [Project page] </font>
-                                             </a>
-                                              <br>
-                                              <font color="#18AF1D"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="#">
-                                                <font size="4"><strong>EditGAN: High-Precision Semantic Image Editing</strong></font>
-                                                </a>
-                                                <br>
-                                             <font>Huan Ling, Karsten Kreis, Daiqing Li, <strong>Seung Wook Kim</strong>, Antonio Torralba, Sanja Fidler</font> <br>
-                                             <a href="#">
-						<font size="2"> [Project page] </font>
-                                             </a>
-                                              <br>
-                                              <font color="#18AF1D"> Conference on Neural Information Processing Systems (NeurIPS) 2021 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="https://arxiv.org/abs/2104.15060">
-                                                <font size="4"><strong>DriveGAN: Towards a Controllable High-Quality Neural Simulation</strong></font>
-                                                </a>
-                                                <br>
-                                             <font><strong>Seung Wook Kim</strong>, Jonah Philion, Antonio Torralba, Sanja Fidler</font> <br>
-                                             <a href="https://nv-tlabs.github.io/DriveGAN/">
-						<font size="2"> [Project page] </font>
-                                             </a>
-                                              <br>
-                                              <font color="red"><strong>(Oral)</strong></font>
-                                              <font color="#18AF1D"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2021 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="https://papers.nips.cc/paper/2020/file/bacadc62d6e67d7897cef027fa2d416c-Paper.pdf">
-                                                <font size="4"><strong>Variational Amodal Object Completion</strong></font>
-                                                </a>
-                                                <br>
-                                             <font>Huan Ling, David Acuna, Karsten Kreis, <strong>Seung Wook Kim</strong>, Sanja Fidler</font> <br>
-                                            <a href="http://www.cs.toronto.edu/~linghuan/vae_mask/">
-						<font size="2"> [Project page] </font>
-                                             </a>
-                                            <br/>
-                                             <font color="#18AF1D"> Conference on Neural Information Processing Systems (NeurIPS) 2020 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="https://arxiv.org/abs/2005.12126">
-                                                <font size="4"><strong>Learning to Simulate Dynamic Environments with GameGAN</strong></font>
-                                                </a>
-                                                <br>
-                                             <font><strong>Seung Wook Kim</strong>, Henry Zhou, Jonah Philion, Antonio Torralba, Sanja Fidler</font> <br>
-                                             <a href="https://nv-tlabs.github.io/gameGAN/">
-						<font size="2"> [Project page] </font>
-                                             </a>
-                                              <br>
-                                             <font color="#18AF1D"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2020 </font>
-                                            </p>
-								        </div>
- 			        <div>
-                                             <p>
-                                             <a href="https://arxiv.org/abs/1806.02453">
-                                                <font size="4"><strong>Visual Reasoning by Progressive Module Networks</strong></font>
-                                             </a><br>
-                                             <font><strong>Seung Wook Kim</strong>, Makarand Tapaswi, Sanja Fidler</font> <br>
-                                             <a href="https://seung-kim.github.io/pmn_pj_page/">
-						<font size="2"> [Project page] </font>
-
-                                             </a>
-                                              <br>
-                                             <font color="#18AF1D"> International Conference on Learning Representations (ICLR) 2019 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="https://arxiv.org/abs/1805.10784">
-                                                <font size="4"><strong>Keep and Learn: Continual Learning by Constraining the Latent Space for Knowledge Preservation in Neural Networks</strong></font><br>
-                                             </a>
-                                             <font>Hyo-Eun Kim, <strong>Seung Wook Kim</strong>, Jaehwan Lee</font> <br>
-                                             <font color="#18AF1D">International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI) 2018 </font>
-                                            </p>
-								        </div>
-
-                                                                        </div>
-								</div>
-							</div>
-                         <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<h2 class="colorlib-heading animate-box" style="margin-bottom: 1em; margin-top: 3em;">Journal Publications</h2>
-                                         <div>
-                                             <p>
-                                             <a href="https://arxiv.org/abs/2102.03897">
-                                                <font size="4"><strong>Self-supervised driven consistency training for annotation efficient histopathology image analysis</strong></font><br>
-                                             </a>
-                                             <font>Chetan L. Srinidhi, <strong>Seung Wook Kim</strong>, Fu-Der Chen, Anne L. Martel</font> <br>
-                                              <a href="https://arxiv.org/abs/2102.03897">
-						<font size="2"> [Paper] </font>
-
-                                              </a> <br>
-
-                                            <font color="#18AF1D"> Medical Image Analysis </font>
-
-                                             </p>
-								        </div>
-
-                               
-                                                                        </div></div>
-                                                                        </div>
-	                           <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<h2 class="colorlib-heading animate-box" style="margin-bottom: 1em; margin-top: 3em;">Workshop Publications</h2>
-                                         <div>
-                                             <p>
-                                             <a>
-                                                <font size="4"><strong>Cascaded Pyramid Network for 3D Human Pose Estimation Challenge</strong></font><br>
-                                             </a>
-                                             <font> Sungeun Hong, Wonjin Jung, Ilsang Woo, <strong> Seung Wook Kim</strong></font> <br>
-                                             <font color="#18AF1D"> European Conference on Computer Vision (ECCV PoseTrack Workshop) 2018 </font>
-                                            </p>
-								        </div>
-                                         <div>
-                                             <p>
-                                             <a href="https://openreview.net/forum?id=ByXrfaGFe&noteId=ByXrfaGFe">
-                                                <font size="4"><strong>Transferring Knowledge to Smaller Network with Class-Distance Loss</strong></font><br>
-                                             </a>
-                                             <font><strong>Seung Wook Kim</strong>, Hyo-Eun Kim</font> <br>
-                                             <font color="#18AF1D"> International Conference on Learning Representations (ICLR Workshop Track) 2017 </font>
-                                            </p>
-								        </div>
-                                        <div>
-                                             <p>
-                                             <a href="https://www.semanticscholar.org/paper/Combining-word-prediction-and-rary-Huffman-coding-Kim-Rudzicz/0e47ab31d627b4da33e93e2dd1210e56b2bbab01">
-                                                <font size="4"><strong>Combining word prediction and г-ary Huffman coding for text entry</strong></font><br>
-                                             </a>
-                                             <font><strong>Seung Wook Kim</strong>, Frank Rudzicz</font> <br>
-                                             <font color="#18AF1D"> Workshop on Speech and Language Processing for Assistive Technologies (SLPAT) 2016 </font>
-                                            </p>
-								        </div>
-
-
-                                                     </div>
-
-						</div>
-					</div>
-                        <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<h2 class="colorlib-heading animate-box" style="margin-bottom: 1em; margin-top: 3em;">Preprints</h2>
-
-<div>
-                                             <p>
-                                             <a href="https://arxiv.org/pdf/1912.13082.pdf">
-                                                <font size="4"><strong>The Shmoop Corpus: A Dataset of Stories with Loosely Aligned Summaries</strong></font><br>
-                                             </a>
-                                             <font>Atef Chaudhury, Makarand Tapaswi, <strong>Seung Wook Kim</strong>, Sanja Fidler</font> <br>
-                                              <a href="https://github.com/achaudhury/shmoop-corpus">
-						<font size="2"> [Github] </font>
-
-                                              </a> <br>
-
-                                            <font color="#18AF1D"> arXiv: 1912.13082 </font>
-
-                                             </p>
-								        </div>
-
-                               
-                                                                        </div>
-                                                                </div>    </div> </div></div></div>
-			</section> -->
-
-
-	    <section class="colorlib-experience" data-section="experience">
-               <div class="colorlib-narrow-content">
-				 <div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Experience</span>
-							<h2 class="colorlib-heading animate-box" style="margin-bottom: 1em;">Education</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-
-                                                <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-
-					               <div class="timeline-label">
-                                   <img src="iit-logo.png"  alt="" style="width:55px;height:55px; float:left; margin-top:-5px">
-					                  <h2><font size="3"><a href="https://home.iitd.ac.in/"> Institute of Technology,       B.Tech Engineering Physics</a></font><br>
-                                       <span><font size="2">July. 2018 - June 2022</font></span></h2>
-					               </div>
-					            </div>
-					         </article>
-
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-
-					               <div class="timeline-label">
-                                   <img src="arcadia-logo.jpeg"  alt="" style="width:55px;height:55px; float:left; margin-top:-5px">
-					                  <h2><font size="3"><a href="https://www.arcadiaacademy.ac.in/"> Academy Kota Rajasthan,      Sr. Secondary School</a> </font><br>
-                                       <span><font size="2">July 2015 - March 2017</font></span></h2>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-
-					               <div class="timeline-label">
-					               <img src="jnv-logo.png"  alt="" style="width:55px;height:55px; float:left; margin-top:-5px">
-					               	<h2><font size="3"><a href="https://navodaya.gov.in/">Jawahar Navodaya Vidyalaya Lalitpur U.P. ,       High School</a></font> <br>
-                                     <span><font size="2">July 2010 - March 2015</font></span></h2>
-					               </div>
-					            </div>
-					         </article>
-
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
+        <!-- Sidebar -->
+        <aside id="sidebar" class="mobile-menu fixed inset-y-0 left-0 z-40 w-72 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 overflow-y-auto lg:sticky lg:top-0 lg:h-screen lg:transform-none">
+            <div class="p-8 text-center">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-primary-500/20 mb-6">
+                    <img src="main_pic.jpeg" alt="Rajveer Singh" class="w-full h-full object-cover" loading="lazy">
                 </div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<h2 class="colorlib-heading animate-box"  style="margin-bottom: 1em;">Work Experience</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-								<div class="timeline-entry-inner">
-									<div class="timeline-label">
-										<img src="keychain.jpeg" alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
-										<h2><font size="3"><a href="https://www.keychain.com/"> Keychain , Senior Backend Developer (SDE II) </a></font><br>
-											<span><font size="2">(Gurgaon, India) May 2025 - Present</font></span>
-										</h2>
+                <h1 class="text-xl font-bold mb-1">Rajveer Singh</h1>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">IIT Delhi &bull; B.Tech Engineering Physics</p>
 
-										<p class="experience-paragraph-keychain">Designed and implemented contract management microservice using Spring Boot and PostgreSQL to en. . .<button class="read-more-button-keychain" onclick="toggleExperienceKeychain()" >▼</button></p>
-										<p class="full-experience-paragraph-keychain" style="display: none;">
-											<ul class="experience-list-keychain" style="display: none;">
-												<li>Designed and implemented contract management microservice using Spring Boot and PostgreSQL to enforce manufacturer messaging limits, supporting multiple contracts with configurable amendments and fallback rules, improving platform compliance by 100% and reducing unauthorized outreach by 75%</li>
-												<li>Architected high-performance caching strategy leveraging Redis (4-hour TTL) and PostgreSQL materialized views for category metrics, achieving 85% reduction in query latency and 60% improvement in brand-manufacturer matching accuracy through real-time segment analysis</li>
-												<li>Developed geospatial recommendation system for packaging suppliers using quadtree optimization, increasing manufacturer retention by 40% and reducing supplier discovery time from days to minutes across 10,000+ facilities</li>
-												<li>Led A/B testing framework for intro batching system using EventBridge Scheduler and cohort analysis, achieving 65% improvement in brand engagement rates and 3-4% increase in project conversion through optimized messaging strategies</li>
-												<li>Spearheaded SOC2 compliance infrastructure migration using Terraform for multi-environment deployments, implementing comprehensive audit logging and IAM policies that reduced security incidents by 80% while accelerating CI/CD cycles by 30%</li>
-												<button class="read-more-button-keychain" onclick="toggleExperienceKeychain()" >▲</button>
-											</ul>
-										</p>
+                <div class="text-xs text-gray-500 dark:text-gray-400 space-y-1 mb-6">
+                    <p>Keychain</p>
+                    <p>BluSmart</p>
+                    <p>Panscience AI Healthcare</p>
+                    <p>FarEye</p>
+                </div>
 
+                <!-- Social Links -->
+                <div class="flex justify-center gap-4 mb-8">
+                    <a href="https://github.com/rajveer98singh" target="_blank" rel="noopener" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" aria-label="GitHub">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rajveer-singh-iitd/" target="_blank" rel="noopener" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://leetcode.com/razz007/" target="_blank" rel="noopener" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" aria-label="LeetCode">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+                    </a>
+                </div>
 
-									</div>
-								</div>
-							</article>
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-								<div class="timeline-entry-inner">
-									<div class="timeline-label">
-										<img src="blusmart.jpeg" alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
-										<h2><font size="3"><a href="https://www.linkedin.com/company/pan-science-innovation/"> BluSmart , Sr. Software Development Engineer(SDE II) </a></font><br>
-											<span><font size="2">(Gurgaon, India) Sept. 2024 - May 2025</font></span>
-										</h2>
-										
-										<p class="experience-paragraph-blusmart">Developed Intercity Cab Booking and Suggested Places features using geohash and ride hi. . .<button class="read-more-button-blusmart" onclick="toggleExperienceBluSmart()" >▼</button></p>
-										<p class="full-experience-paragraph-blusmart" style="display: none;">
-											<ul class="experience-list-blusmart" style="display: none;">
-												<li>Developed Intercity Cab Booking and Suggested Places features using geohash and ride history data, driving a 20% increase in user engagement across 5M+ users in India and the UAE.</li>
-												<li>Engineered scalable database solutions with MySQL and MongoDB, supporting millions of daily transactions while ensuring 99.9% uptime and fault tolerance in high-traffic, distributed systems.</li>
-												<li>Optimized backend architecture with Spring Boot and Redis, reducing API response times by 30% and enhancing real-time processing for high-demand features like ride-booking and insurance.</li>
-												<li>Designed and implemented multi-region infrastructure for seamless cross-country deployment across India and the UAE, ensuring data consistency, high availability, and failover strategies.</li>
+                <!-- Navigation -->
+                <nav class="space-y-1 mb-8">
+                    <a href="#about" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About</a>
+                    <a href="#experience" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Experience</a>
+                    <a href="#education" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Education</a>
+                    <a href="#skills" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Skills</a>
+                    <a href="#interests" class="nav-link block py-2 px-4 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Interests</a>
+                </nav>
 
-												<button class="read-more-button-blusmart" onclick="toggleExperienceBluSmart()" >▲</button>
-											</ul>
-										</p>
-										
-										
-									</div>
-								</div>
-							</article>
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-								<div class="timeline-entry-inner">
-									<div class="timeline-label">
-										<img src="parchaa.jpg" alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
-										<h2><font size="3"><a href="https://www.linkedin.com/company/pan-science-innovation/">Panscience AI Healthcare Pvt Ltd , Founding Engineer </a></font><br>
-											<span><font size="2">(New Delhi, India) Jan. 2023 - May 2024</font></span>
-										</h2>
-										
-										
-										<p class="experience-paragraph-psi">Excelled in AWS cloud deployments, leveraging technologies like ECS, EC2, RDS, EFS, IAM, se. . .<button class="read-more-button-psi" onclick="toggleExperiencePSI()" >▼</button></p>
-										<p class="full-experience-paragraph-psi" style="display: none;">
-											<ul class="experience-list-psi" style="display: none;">
-												<li>Excelled in AWS cloud deployments, leveraging technologies like ECS, EC2, RDS, EFS, IAM, security groups, and VPC for scalable and secure container orchestration and data management.</li>
-												<li>Mastered backend development with NestJS, creating robust and secure APIs, and implementing comprehensive file security and exception handling mechanisms.</li>
-												<li>Led the design and implementation of a microservices architecture for various healthcare modules, enhancing scalability and maintainability. This included creating a dedicated authentication and authorization server, establishing a robust API gateway, and transitioning from a monolithic architecture to microservices to effectively manage load and reduce application downtime.</li>
-												<li>Expertly led FHIR server integration, addressing complex healthcare data challenges and ensuring compliance with industry standards. Focused on secure data exchange and interoperability, significantly enhancing system compliance and scalability in healthcare data management.</li>
-												<li>Implemented advanced database solutions, leveraging PostgreSQL, MongoDB, and Neo4j for complex data relationships, complemented by Elasticsearch and Redis for high-performance data querying and caching, enhancing processing efficiency and retrieval speed.</li>
-												<li>Drove CI/CD initiatives using GitHub Actions and GitLab, streamlining deployment processes and enhancing system reliability.</li>
-												<li>Spearheaded the development of the Parchaa PHR application, balancing system design considerations with practical limitations and advantages.</li>
-												<li>Advanced AWS security practices, including configuration of security groups, load balancers, and IAM roles for optimal cloud security.</li>
-												<li>Integrated GPT-4 APIs, demonstrating innovative use of AI in backend systems for enhanced functionality and user engagement.</li>
-												<button class="read-more-button-psi" onclick="toggleExperiencePSI()" >▲</button>
-											</ul>
-											
-										</p>
-										
-										
-									</div>
-								</div>
-							</article>
+                <!-- Quick Links -->
+                <div class="space-y-2 text-sm">
+                    <a href="blogs.html" class="block text-primary-600 dark:text-primary-400 hover:underline">Blogs</a>
+                    <a href="resume.html" class="block text-primary-600 dark:text-primary-400 hover:underline">Resume</a>
+                    <div class="flex items-center justify-center gap-2">
+                        <a href="https://drive.google.com/file/d/1vO1l-KVkkdzE-AECGHJIb3YufZff9Cm8/view?usp=sharing" target="_blank" class="inline-flex items-center gap-1 text-primary-600 dark:text-primary-400 hover:underline">CV Drive Link<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+                        <button onclick="copyCV(this)" class="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Copy link">
+                            <svg class="w-3.5 h-3.5 text-gray-400 hover:text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
+            <div class="p-4 text-center text-xs text-gray-400 dark:text-gray-600 border-t border-gray-200 dark:border-gray-800">
+                &copy; <span id="year"></span> Rajveer Singh
+            </div>
+        </aside>
 
+        <!-- Sidebar Overlay (mobile) -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
 
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-0">
+            <div class="max-w-4xl mx-auto px-6 py-12 lg:py-16">
 
-					               <div class="timeline-label">
-					                 <img src="fareye.jpeg"  alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
-					                 <h2><font size="3"><a href="https://www.linkedin.com/company/fareye/">FarEye Technologies Private Limited, Software Development Engineer I</a></font><br> <span><font size="2">(Noida, India)  Oct. 2022 - Jan. 2023</font></span></h2>
-									 <p class="experience-paragraph-fareye">Integrated over 10 new carrier/client systems into the FarEye system as a part of the Integr. . .<button class="read-more-button-fareye" onclick="toggleExperienceFareye()" >▼</button></p>
-									<p class="full-experience-paragraph-fareye" style="display: none;">
-										<ul class="experience-list-fareye" style="display: none;">
-											<li>Integrated over 10 new carrier/client systems into the FarEye system as a part of the Integration Team.</li>
-											<li>Successfully resolved client-side issues related to these integrated systems.</li>
-											<li>Utilized technologies such as Spring Boot, REST/SOAP, JavaScript, SFTP servers, AWS S3, databases, JSON, and XML in the integration process.</li>
-											<li>Secured the first position in a three-day internal development competition at FarEye.</li>
-											<li>Collaborated with a team of six to replicate the functionality of BookMyShow from scratch.</li>
-											<li>Leveraged Java Spring Boot for backend development and PostgreSQL for the database.</li>
-											<li>Developed both web and mobile applications using ReactJS and React Native for end users and admin roles.</li>
-											<li>Enabled end users to book tickets while providing admin capabilities to manage movies, theaters, and shows.</li>
-											<li>Gained valuable experience in client interactions and issue resolution while working with the Integration Team.</li>
-											<li>Demonstrated strong communication and interpersonal skills through effective collaboration with cross-functional teams.</li>
-											<button class="read-more-button-fareye" onclick="toggleExperienceFareye()" >▲</button>
-										</ul>
-									</p>
-					               </div>
-					            </div>
-					         </article>
+                <!-- About Section (merged with Professional Summary) -->
+                <section id="about" class="mb-20 fade-up">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">About Me</span>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                        <h2 class="text-3xl lg:text-4xl font-bold typing-cursor">Hi, I'm Rajveer.</h2>
+                        <a href="https://home.iitd.ac.in/" target="_blank" rel="noopener" class="glow-badge flex items-center gap-2.5 px-4 py-2 bg-primary-50 dark:bg-primary-900/20 rounded-lg border border-primary-200 dark:border-primary-800 hover:border-primary-400 dark:hover:border-primary-600 transition-colors w-fit flex-shrink-0">
+                            <img src="iit-logo.png" alt="IIT Delhi" class="w-7 h-7 object-contain">
+                            <div>
+                                <p class="font-semibold text-sm text-primary-700 dark:text-primary-300 leading-tight">IIT Delhi</p>
+                                <p class="text-[11px] text-gray-500 dark:text-gray-400">B.Tech, Engg. Physics '22</p>
+                            </div>
+                        </a>
+                    </div>
 
+                    <div class="text-gray-600 dark:text-gray-300 space-y-3 mb-8 leading-relaxed">
+                        <p>
+                            Senior Backend Engineer who turns caffeine into microservices. <strong>4+ years</strong> building scalable systems across B2B marketplaces, ride-hailing, and healthcare. Specialist in <strong>Java/Spring Boot, PostgreSQL, Redis, and AWS</strong> &mdash; from rate limiting and geospatial engines at 10K+ scale to SOC 2-compliant infrastructure and real-time ETL pipelines serving millions of users.
+                        </p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+                            Engineering Physics is just a fancy way of saying I can debug both quantum mechanics and your production server at 2 AM. Off-duty: backpacking, F1, and convincing people my degree is real.
+                        </p>
+                    </div>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
+                    <!-- Role Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 stagger-children fade-up">
+                        <div class="role-card bg-indigo-900 text-white p-6 rounded-xl">
+                            <h3 class="font-bold text-lg mb-2">Architect</h3>
+                            <p class="text-indigo-200 text-sm">Microservices, event-driven systems, geospatial engines &mdash; I design the blueprints that scale.</p>
+                        </div>
+                        <div class="role-card bg-teal-800 text-white p-6 rounded-xl">
+                            <h3 class="font-bold text-lg mb-2">Developer</h3>
+                            <p class="text-teal-200 text-sm">APIs, caching layers, ETL pipelines &mdash; I write the backend code that quietly keeps everything running at scale.</p>
+                        </div>
+                        <div class="role-card bg-gray-800 text-white p-6 rounded-xl">
+                            <h3 class="font-bold text-lg mb-2">Problem Solver</h3>
+                            <p class="text-gray-300 text-sm">DDoS attacks, race conditions, compliance audits &mdash; I thrive when things are on fire.</p>
+                        </div>
+                    </div>
+                </section>
 
-					               <div class="timeline-label">
-					               <img src="nexmatics.jpeg"  alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
-					               	<h2><font size="3"><a href="https://www.linkedin.com/company/nexmatics/">Nexmatics Pvt. Ltd. ,Software Development Intern</a></font><br> <span><font size="2">(New Delhi, India) May 2021 - July 2021</font></span></h2>
-									   <p class="experience-paragraph-nexmatics">Designed servers, clients, and a MySQL database in Python to establish communication wit. . .<button class="read-more-button-nexmatics" onclick="toggleExperienceNexmatics()" >▼</button></p>
-									   <p class="full-experience-paragraph-nexmatics" style="display: none;">
-										<ul class="experience-list-nexmatics" style="display: none;">
-											<li>Designed servers, clients, and a MySQL database in Python to establish communication with multiple sensors and cooling devices, including 18 fans and 4 pumps.</li>
-											<li>Developed a weather and fertility control system with an alert system that triggers notifications for different sensor thresholds.</li>
-											<li>Designed both the frontend and backend systems for logging data from 60+ sensors across 7 regions, hosted on an Azure server using Python.</li>
-											<li>Automated fan and pump operations based on real-time data from temperature and humidity sensors, which were stored in a database.</li>
-											<li>Implemented regression and decision-making machine learning models to predict values from dependent sensors.</li>
-											<li>Leveraged the data obtained to automate devices effectively during specified timeframes.</li>
-											<button class="read-more-button-nexmatics" onclick="toggleExperienceNexmatics()" >▲</button>
-									</ul>
-									</p>
-					               </div>
-					            </div>
-					         </article>
+                <!-- Experience Section -->
+                <section id="experience" class="mb-20 fade-up">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Experience</span>
+                    <h2 class="text-2xl font-bold mt-2 mb-8">Work Experience</h2>
 
-							 <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
+                    <div class="space-y-6 stagger-children fade-up">
 
-					               <div class="timeline-label">
-					                <img src="edc.jpeg"  alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
-					                	<h2><font size="3"><a href="https://www.linkedin.com/company/edc-iit-delhi/">Entrepreneurship Development Cell (eDC IIT Delhi),  Marketing Executive & Coordinator </a></font><br> <span><font size="2">(New Delhi, India) Sept. 2019 - May 2021</font></span></h2>
-										<p class="experience-paragraph-edc">Leading a 3-tier team of 30+ executives to raise finances, managing endorsements and. . .<button class="read-more-button-edc" onclick="toggleExperienceEDC()" >▼</button></p>
-									<p class="full-experience-paragraph-edc" style="display: none;">
-										Leading a 3-tier team of 30+ executives to raise finances, managing endorsements and entrepreneurial tie-ups for the club.
-										Implemented a points system to increase participation of executives resulting in the increase of participation by 200% YoY.
-										<button class="read-more-button-edc" onclick="toggleExperienceEDC()" >▲</button>
-									</p>
-					               </div>
-					            </div>
-					         </article>
+                        <!-- Keychain -->
+                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <img src="keychain.jpeg" alt="Keychain" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg">
+                                        <a href="https://www.keychain.com/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">Keychain</a>
+                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">B2B Marketplace for Brands & Manufacturers</span>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Senior Backend Engineer (SDE II) &mdash; Edge Team</p>
+                                    <p class="text-xs text-gray-400 dark:text-gray-500">Gurgaon, India &bull; May 2025 &ndash; Present</p>
+                                </div>
+                            </div>
+                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Architected contract management, newsletter platform, and event-driven communications layer. Built geospatial recommendation engine and SOC 2 infrastructure.</p>
+                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
+                                <li><span class="tech-mention">Contract Microservice</span> &mdash; Spring Boot + PostgreSQL with layered amendments model and two-tier Redis + materialized-view caching; partnered with Product and Ops on quota policy <span class="metric">-85% query latency</span> <span class="metric">+60% match accuracy</span></li>
+                                <li><span class="tech-mention">Edge Newsletter Platform</span> &mdash; Led cross-functional delivery: SendGrid-aliased sender addresses, segment-based audience APIs, scheduler + CRON dispatch, inbound-parse webhooks, and <span class="tech-mention">Prefect ETL</span> pipeline streaming events into campaign_metrics warehouse</li>
+                                <li><span class="tech-mention">Event-Driven Communications</span> &mdash; Intelligent 30-min comment batching across blogs, newsletters, and LinkedIn; Twilio ingestion with retry logic; automated Zendesk ticketing and Slack alerting on every Edge event</li>
+                                <li><span class="tech-mention">Intro-Batching Framework</span> &mdash; EventBridge Scheduler with 6-hour evaluation windows and branching DRIP flows; quadtree-indexed supplier recommendation across 10K+ facilities <span class="metric">+65% engagement</span> <span class="metric">+3-4% conversion</span> <span class="metric">+40% retention</span></li>
+                                <li><span class="tech-mention">SOC 2 Infrastructure</span> &mdash; Terraform across stage + prod with IAM policies and centralized audit logging; OAuth integrations with LinkedIn &amp; Calendly <span class="metric">-80% security incidents</span> <span class="metric">+30% faster CI/CD</span></li>
+                            </ul>
+                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
+                        </div>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
+                        <!-- BluSmart -->
+                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <img src="blusmart.jpeg" alt="BluSmart" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg">
+                                        <a href="https://www.blu-smart.com/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">BluSmart</a>
+                                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">Electric Ride-Hailing Platform</span>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Senior Backend Engineer (SDE II)</p>
+                                    <p class="text-xs text-gray-400 dark:text-gray-500">Gurgaon, India &bull; Sept 2024 &ndash; May 2025</p>
+                                </div>
+                            </div>
+                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Built API security layer, revamped geospatial algorithms, and engineered multi-region referral systems for millions of daily rides.</p>
+                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
+                                <li><span class="tech-mention">API Security Layer</span> &mdash; Rotating secrets, rate limiting, request throttling, and OTP-based fraud prevention &mdash; neutralized active DDoS/OTP-bombing attacks and prevented significant financial loss</li>
+                                <li><span class="tech-mention">Suggested Places Algorithm</span> &mdash; Geohashing over historical ride data; resolved concurrency and race-condition defects across high-traffic Spring Boot APIs <span class="metric">-20% booking time</span> <span class="metric">70% users from suggestions</span> <span class="metric">+45% reliability</span></li>
+                                <li><span class="tech-mention">Multi-Region Referral Program</span> &mdash; India and UAE with Spring AOP for synchronization; instrumented New Relic, Redis caching, and parallel processing for observability</li>
+                            </ul>
+                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
+                        </div>
 
-					               <div class="timeline-label">
-					               	<img src="e-tex.jpeg"  alt="" style="width:55px;height:55px; margin-right:10px; float:left; margin-top:-5px">
-					               <h2><font size="3"><a href="https://www.linkedin.com/company/e-tex-healthcare-pvt-ltd/">E-TEX, Research Intern</a></font><br> <span><font size="2">(New Delhi, India) Sept. 2018 - Dec. 2018</font></span></h2>
-								   <p class="experience-paragraph-etex">Presented in 6th International conference on Textile technology held in New Delhi. . .<button class="read-more-button-etex" onclick="toggleExperienceEtex()" >▼</button></p>
-									<p class="full-experience-paragraph-etex" style="display: none;">
-										<ul class="experience-list-etex" style="display: none;">
-											<li>Presented at the 6th International Conference on Textile Technology in New Delhi (6-8 Dec 2018) on compression therapy.</li>
-											<li>Developed a textile-based product using compression therapy (static and dynamic compression) for massaging legs and arms in both static and dynamic positions.</li>
-											<li>Specialized in prototyping, designing, and selecting appropriate materials for the bladder component.</li>
-											<li>Material selection focused on properties like elasticity and strength, ensuring optimal functionality for patient relaxation.</li>
-											<li>Designed the bladder as a sequential bladder, allowing air to flow between segments with a time lag, creating a massage-like experience for patients.</li>
-											<button class="read-more-button-etex" onclick="toggleExperienceEtex()" >▲</button>
-										</ul>
-									</p>
-					               </div>
-					            </div>
-					         </article>
+                        <!-- Panscience AI Healthcare -->
+                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <img src="parchaa.jpg" alt="Panscience AI" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg">
+                                        <a href="https://www.linkedin.com/company/pan-science-innovation/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">Panscience AI Healthcare</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Founding Engineer</p>
+                                    <p class="text-xs text-gray-400 dark:text-gray-500">Delhi, India &bull; Feb 2023 &ndash; May 2024</p>
+                                </div>
+                            </div>
+                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Built FHIR-compliant healthcare platform from zero to production with optimized AWS infrastructure.</p>
+                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
+                                <li><span class="tech-mention">FHIR Microservices Platform</span> &mdash; Zero to production: dedicated auth/authz servers, API gateway, PostgreSQL + MongoDB + Redis data layer, secure file-upload pipeline; drove interoperability and regulatory compliance</li>
+                                <li><span class="tech-mention">AWS Cloud Architecture</span> &mdash; Hardened security groups, load balancers, and IAM roles <span class="metric">-40% AWS costs</span> through right-sizing and caching strategy</li>
+                            </ul>
+                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
+                        </div>
 
-							 <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						   <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							   <h2 class="colorlib-heading animate-box" style="margin-bottom: 1em;">Development Skills</h2>
-						   </div>
-					   </div>
-					   <div class="row">
-						   <div class="col-md-12">
-							<div class="timeline-centered">
-   
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://go.java">
-												<img alt="Java" width="150" height="60" src="tech-Images/java.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://nodejs.org">
-												<img alt="NodeJS" width="200" height="70" src="tech-Images/nodejs.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://spring.io">
-												<img alt="Spring" width="150" height="80" src="tech-Images/spring.svg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://hibernate.org">
-												<img alt="Hibernate" width="200" height="40" src="tech-Images/hibernate.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://aws.amazon.com/">
-												<img alt="AWS" width="150" height="60" src="tech-Images/aws.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://cloud.google.com">
-												<img alt="GCP" width="200" height="40" src="tech-Images/gcp.svg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://kubernetes.io">
-												<img alt="kubernetes" width="200" height="100" src="tech-Images/kubernetes.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.docker.com">
-												<img alt="docker" width="200" height="50" src="tech-Images/docker.svg">
-											</a>
-										</div>
-		
-										<div class="col-md-4">
-											<a target="_blank" href="https://kafka.apache.org">
-												<img alt="kafka" width="150" height="70" src="tech-Images/kafka.svg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.rabbitmq.com">
-												<img alt="rabbitmq" width="200" height="30" src="tech-Images/rabbitmq.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.mongodb.com">
-												<img alt="mongodb" width="150" height="50" src="tech-Images/mongodb.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.postgresql.org">
-												<img alt="postgresql" width="200" height="40" src="tech-Images/postgresql.svg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.mysql.com">
-												<img alt="mysql" width="150" height="80" src="tech-Images/mysql.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://redis.io">
-												<img alt="redis" width="150" height="70" src="tech-Images/redis.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.elastic.co">
-												<img alt="elastic" width="150" height="80" src="tech-Images/elastic.svg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.nginx.com/">
-												<img alt="nginx" width="150" height="40" src="tech-Images/nginx.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.npmjs.com">
-												<img alt="npm" width="150" height="80" src="tech-Images/npm.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://maven.apache.org">
-												<img alt="maven" width="150" height="50" src="tech-Images/maven.svg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://git-scm.com">
-												<img alt="git" width="150" height="40" src="tech-Images/git.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.android.com">
-												<img alt="Android" width="200" height="40" src="tech-Images/android.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.javascript.com">
-												<img alt="javascript" width="50" height="60" src="tech-Images/js.svg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://jquery.com">
-												<img alt="jquery" width="120" height="30" src="tech-Images/jquery.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://www.w3.org/Style/CSS/specs.en.html">
-												<img alt="css" width="50" height="80" src="tech-Images/css3.svg">
-											</a>
-										</div>
-										<div class="col-md-4">
-											<a target="_blank" href="https://dev.w3.org/html5/spec-LC">
-												<img alt="html" width="50" height="60" src="tech-Images/html5.svg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-4">
-											<a target="_blank" href="https://getbootstrap.com">
-												<img alt="bootstrap" width="150" height="30" src="tech-Images/bootstrap.svg">
-											</a>
-										</div>
-									</div>
-								</article>
-   
-								<article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-								   <div class="timeline-entry-inner">
-									  <div class="timeline-icon color-none">
-									  </div>
-								   </div>
-								</article>
-							 </div>
-						  </div>
-					  </div>
-				</div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						   <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							   <h2 class="colorlib-heading animate-box" style="margin-bottom: 1em;">Interests</h2>
-						   </div>
-					   </div>
-					   <div class="row">
-						   <div class="col-md-12">
-							<div class="timeline-centered">
-								<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Backpacking_(travel)">
-												<img alt="Backpacker" width="100" height="100" src="interest-Images/backpacker.jpeg">
-											</a>
-										</div>
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Motorcycling">
-												<img alt="Biking" width="100" height="100" src="interest-Images/biking.jpeg">
-											</a>
-										</div>
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Reading">
-												<img alt="Reading Books" width="100" height="100" src="interest-Images/books.jpeg">
-											</a>
-										</div>
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Cricket">
-												<img alt="cricket" width="100" height="100" src="interest-Images/cricket.jpeg">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Formula_One">
-												<img alt="f1" width="100" height="100" src="interest-Images/f1.png">
-											</a>
-										</div>
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Football">
-												<img alt="football" width="100" height="100" src="interest-Images/football.png">
-											</a>
-										</div>
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Kayaking">
-												<img alt="kayaking" width="100" height="100" src="interest-Images/kayaking.jpeg">
-											</a>
-										</div>
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Physics">
-												<img alt="physics" width="100" height="100" src="interest-Images/physics.png">
-											</a>
-										</div>
-									</div>
-									<div class="row" style="margin-left: 20px;">
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Politics">
-												<img alt="politics" width="100" height="100" src="interest-Images/politics.jpeg">
-											</a>
-										</div>
-										<div class="col-md-3">
-											<a target="_blank" href="https://en.wikipedia.org/wiki/Swimming_(sport)">
-												<img alt="swimming" width="100" height="100" src="interest-Images/swimming.png">
-											</a>
-										</div>
-									</div>
-								</article>
-   
-								
-   
-								<article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-								   <div class="timeline-entry-inner">
-									  <div class="timeline-icon color-none">
-									  </div>
-								   </div>
-								</article>
-							 </div>
-						  </div>
-					  </div>
-				   </div>
-			</section>
+                        <!-- FarEye -->
+                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <img src="fareye.jpeg" alt="FarEye" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg">
+                                        <a href="https://www.fareye.com/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">FarEye Technologies</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Backend Engineer (SDE I)</p>
+                                    <p class="text-xs text-gray-400 dark:text-gray-500">Noida, India &bull; Sept 2022 &ndash; Jan 2023</p>
+                                </div>
+                            </div>
+                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Integrated 15+ carrier systems processing 100K+ daily transactions with a reusable connector framework.</p>
+                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
+                                <li><span class="tech-mention">Carrier Integration</span> &mdash; 15+ carrier/client systems via Spring Boot, REST/SOAP, and AWS S3; built reusable connector framework <span class="metric">100K+ daily transactions</span> <span class="metric">-60% integration time</span></li>
+                                <li><span class="tech-mention">Internal Hackathon Winner</span> &mdash; Led team in 3-day competition building booking-and-payments clone on Spring Boot microservices</li>
+                            </ul>
+                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
+                        </div>
 
-			<!--
-        	<section class="colorlib-about" data-section="cv">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">Curriculum Vitae</span>
-										<a href="CV-SeungWookKim.pdf"><font size='4'><strong>Click to download CV</strong></font>
-                                        </a>
-                                    </div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>-->
+                        <!-- Nexmatics -->
+                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <img src="nexmatics.jpeg" alt="Nexmatics" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg">
+                                        <a href="https://www.linkedin.com/company/nexmatics/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">Nexmatics Pvt. Ltd.</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Software Development Intern</p>
+                                    <p class="text-xs text-gray-400 dark:text-gray-500">New Delhi, India &bull; May 2021 &ndash; July 2021</p>
+                                </div>
+                            </div>
+                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Built IoT sensor communication platform with ML-driven automation for 60+ sensors across 7 regions.</p>
+                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
+                                <li><span class="tech-mention">IoT Communication Platform</span> &mdash; Python servers/clients with MySQL for 18 fans, 4 pumps, and 60+ sensors across 7 regions hosted on Azure</li>
+                                <li><span class="tech-mention">Smart Automation</span> &mdash; Weather and fertility control with alert system; automated device operations from real-time temperature/humidity data</li>
+                                <li><span class="tech-mention">ML Prediction</span> &mdash; Regression and decision-making models to predict sensor values and automate devices during specified timeframes</li>
+                            </ul>
+                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
+                        </div>
 
+                        <!-- EDC -->
+                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <img src="edc.jpeg" alt="eDC IIT Delhi" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg">
+                                        <a href="https://www.linkedin.com/company/edc-iit-delhi/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">eDC IIT Delhi</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Marketing Executive & Coordinator</p>
+                                    <p class="text-xs text-gray-400 dark:text-gray-500">New Delhi, India &bull; Sept 2019 &ndash; May 2021</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Led a 3-tier team of 30+ executives to raise finances, managing endorsements and entrepreneurial tie-ups. Implemented a points system increasing participation by 200% YoY.</p>
+                        </div>
 
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
+                        <!-- E-TEX -->
+                        <div class="exp-card bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <img src="e-tex.jpeg" alt="E-TEX" class="w-12 h-12 rounded-lg object-contain flex-shrink-0" loading="lazy">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg">
+                                        <a href="https://www.linkedin.com/company/e-tex-healthcare-pvt-ltd/" target="_blank" rel="noopener" class="hover:text-primary-600 dark:hover:text-primary-400">E-TEX</a>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Research Intern</p>
+                                    <p class="text-xs text-gray-400 dark:text-gray-500">New Delhi, India &bull; Sept 2018 &ndash; Dec 2018</p>
+                                </div>
+                            </div>
+                            <p class="exp-summary text-sm text-gray-600 dark:text-gray-300 mb-3">Presented at international conference on compression therapy; developed textile-based medical device.</p>
+                            <ul class="exp-details exp-bullets hidden text-sm text-gray-600 dark:text-gray-300 list-none pl-0">
+                                <li><span class="tech-mention">Conference Presentation</span> &mdash; 6th International Conference on Textile Technology, New Delhi (Dec 2018) on compression therapy</li>
+                                <li><span class="tech-mention">Medical Device R&D</span> &mdash; Textile-based compression therapy product for massage; prototyping, material selection (elasticity, strength), sequential bladder design</li>
+                            </ul>
+                            <button onclick="toggleExp(this)" class="mt-3 text-xs font-medium text-primary-600 dark:text-primary-400 hover:underline cursor-pointer">Show more &#9660;</button>
+                        </div>
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
+                    </div>
+                </section>
 
+                <!-- Education Section -->
+                <section id="education" class="mb-20 fade-up">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Education</span>
+                    <h2 class="text-2xl font-bold mt-2 mb-8">Academic Background</h2>
 
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-5 bg-gradient-to-r from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-xl border-2 border-primary-200 dark:border-primary-800">
+                            <img src="iit-logo.png" alt="IIT Delhi" class="w-14 h-14 object-contain flex-shrink-0" loading="lazy">
+                            <div>
+                                <h3 class="font-bold text-lg">Indian Institute of Technology Delhi</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">B.Tech, Engineering Physics</p>
+                                <p class="text-xs text-gray-400 dark:text-gray-500">2018 &ndash; 2022</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+                            <img src="arcadia-logo.jpeg" alt="Arcadia Academy" class="w-12 h-12 object-contain flex-shrink-0" loading="lazy">
+                            <div>
+                                <h3 class="font-semibold">Arcadia Academy, Kota, Rajasthan</h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Sr. Secondary School &bull; 2015 &ndash; 2017</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+                            <img src="jnv-logo.png" alt="JNV" class="w-12 h-12 object-contain flex-shrink-0" loading="lazy">
+                            <div>
+                                <h3 class="font-semibold">Jawahar Navodaya Vidyalaya, Lalitpur, U.P.</h3>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">High School &bull; 2010 &ndash; 2015</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-	</body>
+                <!-- Skills Section -->
+                <section id="skills" class="mb-20 fade-up">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Technical Skills</span>
+                    <h2 class="text-2xl font-bold mt-2 mb-8">Development Skills</h2>
+
+                    <!-- Languages -->
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Languages</h3>
+                        <div class="flex flex-wrap gap-2 skill-group">
+                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300"><img src="tech-Images/java.svg" alt="Java">Java</span>
+                            <span class="skill-tag bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300">Python</span>
+                            <span class="skill-tag bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300"><img src="tech-Images/js.svg" alt="JS">JavaScript/TypeScript</span>
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">SQL</span>
+                            <span class="skill-tag bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300">C++</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend & Frameworks -->
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Backend & Frameworks</h3>
+                        <div class="flex flex-wrap gap-2 skill-group">
+                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"><img src="tech-Images/spring.svg" alt="Spring">Spring Boot</span>
+                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"><img src="tech-Images/hibernate.svg" alt="Hibernate">Hibernate/JPA</span>
+                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"><img src="tech-Images/nodejs.svg" alt="Node.js">Node.js</span>
+                            <span class="skill-tag bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300">NestJS</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">REST</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">gRPC</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">OAuth2</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">WebSockets</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/kafka.svg" alt="Kafka">Kafka/SQS</span>
+                        </div>
+                    </div>
+
+                    <!-- Data & Caching -->
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Data & Caching</h3>
+                        <div class="flex flex-wrap gap-2 skill-group">
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"><img src="tech-Images/postgresql.svg" alt="PostgreSQL">PostgreSQL</span>
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"><img src="tech-Images/mysql.svg" alt="MySQL">MySQL</span>
+                            <span class="skill-tag bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300"><img src="tech-Images/redis.svg" alt="Redis">Redis</span>
+                            <span class="skill-tag bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"><img src="tech-Images/mongodb.svg" alt="MongoDB">MongoDB</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">Materialized Views</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">Prefect ETL</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">Algolia</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">Typesense</span>
+                            <span class="skill-tag bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300"><img src="tech-Images/elastic.svg" alt="Elasticsearch">Elasticsearch</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & DevOps -->
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Cloud & DevOps</h3>
+                        <div class="flex flex-wrap gap-2 skill-group">
+                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300"><img src="tech-Images/aws.svg" alt="AWS">AWS (ECS, EC2, RDS, S3, SQS, SNS, EventBridge, IAM, VPC)</span>
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"><img src="tech-Images/docker.svg" alt="Docker">Docker</span>
+                            <span class="skill-tag bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"><img src="tech-Images/kubernetes.svg" alt="K8s">Kubernetes</span>
+                            <span class="skill-tag bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300">Terraform</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">CI/CD</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/nginx.svg" alt="Nginx">Nginx</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/git.svg" alt="Git">Git</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/maven.svg" alt="Maven">Maven</span>
+                        </div>
+                    </div>
+
+                    <!-- Architecture -->
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Architecture</h3>
+                        <div class="flex flex-wrap gap-2 skill-group">
+                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">Microservices</span>
+                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">Event-Driven Systems</span>
+                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">Distributed Caching</span>
+                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">Geospatial (Quadtree/Geohash)</span>
+                            <span class="skill-tag bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300">LLM APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Message Queues -->
+                    <div class="mb-8">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Message Queues & Streaming</h3>
+                        <div class="flex flex-wrap gap-2 skill-group">
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300"><img src="tech-Images/kafka.svg" alt="Kafka">Apache Kafka</span>
+                            <span class="skill-tag bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300"><img src="tech-Images/rabbitmq.svg" alt="RabbitMQ">RabbitMQ</span>
+                            <span class="skill-tag bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300">AWS SQS/SNS</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Interests Section -->
+                <section id="interests" class="mb-20 fade-up">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400">Personal</span>
+                    <h2 class="text-2xl font-bold mt-2 mb-8">Interests</h2>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 stagger-children fade-up">
+                        <a href="https://en.wikipedia.org/wiki/Backpacking_(travel)" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/backpacker.jpeg" alt="Backpacking" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Backpacking</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Motorcycling" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/biking.jpeg" alt="Biking" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Biking</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Reading" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/books.jpeg" alt="Reading" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Reading</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Cricket" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/cricket.jpeg" alt="Cricket" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Cricket</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Formula_One" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/f1.png" alt="F1" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Formula 1</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Football" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/football.png" alt="Football" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Football</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Kayaking" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/kayaking.jpeg" alt="Kayaking" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Kayaking</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Physics" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/physics.png" alt="Physics" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Physics</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Politics" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/politics.jpeg" alt="Politics" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Politics</span>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Swimming_(sport)" target="_blank" rel="noopener" class="interest-card group flex flex-col items-center gap-2 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-700">
+                            <img src="interest-Images/swimming.png" alt="Swimming" class="w-16 h-16 rounded-lg object-cover" loading="lazy">
+                            <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400">Swimming</span>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Dark mode toggle
+        const darkToggle = document.getElementById('dark-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const html = document.documentElement;
+
+        function setDarkMode(isDark) {
+            html.classList.toggle('dark', isDark);
+            sunIcon.classList.toggle('hidden', !isDark);
+            moonIcon.classList.toggle('hidden', isDark);
+            localStorage.setItem('darkMode', isDark ? 'dark' : 'light');
+        }
+
+        // Initialize dark mode from preference
+        const savedTheme = localStorage.getItem('darkMode');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setDarkMode(true);
+        }
+
+        darkToggle.addEventListener('click', () => {
+            setDarkMode(!html.classList.contains('dark'));
+        });
+
+        // Mobile nav
+        const mobileBtn = document.getElementById('mobile-nav-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleMobileNav() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('hidden');
+        }
+
+        mobileBtn.addEventListener('click', toggleMobileNav);
+        overlay.addEventListener('click', toggleMobileNav);
+
+        // Close mobile nav on link click
+        sidebar.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) toggleMobileNav();
+            });
+        });
+
+        // Experience toggle
+        function toggleExp(btn) {
+            const details = btn.previousElementSibling;
+            const summary = details.previousElementSibling;
+            const isHidden = details.classList.contains('hidden');
+            details.classList.toggle('hidden');
+            summary.classList.toggle('hidden');
+            btn.innerHTML = isHidden ? 'Show less &#9650;' : 'Show more &#9660;';
+        }
+
+        // Scroll animations
+        const animEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-scale, .stagger-children, .skill-group');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05 });
+
+        animEls.forEach(el => observer.observe(el));
+
+        // Active nav highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 100;
+                if (window.scrollY >= top) current = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('bg-primary-50', 'dark:bg-primary-900/20', 'text-primary-700', 'dark:text-primary-300');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('bg-primary-50', 'dark:bg-primary-900/20', 'text-primary-700', 'dark:text-primary-300');
+                }
+            });
+        });
+
+        // Copy CV link
+        function copyCV(btn) {
+            navigator.clipboard.writeText('https://drive.google.com/file/d/1vO1l-KVkkdzE-AECGHJIb3YufZff9Cm8/view?usp=sharing');
+            const svg = btn.querySelector('svg');
+            svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>';
+            svg.classList.add('text-green-500');
+            setTimeout(() => {
+                svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>';
+                svg.classList.remove('text-green-500');
+            }, 2000);
+        }
+
+        // Year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
 </html>
